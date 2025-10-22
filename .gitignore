@@ -1,0 +1,42 @@
+# Data files (keep structure, ignore content)
+data/inputs/**/*
+data/outputs/**/*
+
+# Keep directory structure
+!data/inputs/**/.gitkeep
+!data/outputs/**/.gitkeep
+
+# Specific data file types
+*.xlsx
+*.xls
+*.csv
+*.json
+*.xml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
