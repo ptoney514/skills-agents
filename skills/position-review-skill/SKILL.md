@@ -1,5 +1,5 @@
 ---
-name: Position Review Meeting Processor
+name: position-review-processor
 description: Processes Oracle Cloud Recruiting requisitions and formats them for weekly position review meetings. Filters positions needing approval and creates structured Excel reports.
 ---
 

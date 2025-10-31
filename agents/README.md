@@ -134,11 +134,12 @@ git commit -m "Archive old-agent"
 
 ## Common Agent Types
 
-- **Code reviewers:** React, Vue, TypeScript, Python, etc.
+- **Code reviewers:** React, Vue, TypeScript, Python, Swift, general code review
 - **Framework experts:** Next.js, Supabase, Tailwind, etc.
 - **Specialized tasks:** Performance optimization, security auditing, accessibility
 - **Architecture:** Database design, API design, system architecture
 - **Testing:** Unit tests, integration tests, E2E tests
+- **Design & UX:** UI/UX design, site auditing, user flow analysis, design review
 
 ## Version Control Benefits
 
@@ -151,9 +152,11 @@ git commit -m "Archive old-agent"
 ## Examples
 
 See individual agent directories for specific examples of:
-- React component review
-- Supabase integration guidance
-- Performance optimization
+- React component review ([react-stack-reviewer](./react-stack-reviewer/))
+- Supabase integration guidance ([supabase-dev-admin](./supabase-dev-admin/))
+- UI/UX design and accessibility ([ui-ux-designer](./ui-ux-designer/))
+- Website UX auditing with Playwright ([ux-site-reviewer](./ux-site-reviewer/))
+- Swift/iOS development ([ios-swift-developer](./ios-swift-developer/), [swift-code-reviewer](./swift-code-reviewer/))
 - And more as you build your library
 
 ## Contributing
