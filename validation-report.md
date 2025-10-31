@@ -9,6 +9,10 @@ Date: /Users/pernelltoney/Documents/Projects/skills-agents
 
 - ✅ All checks passed
 
+## excel-design-guru
+
+- ✅ All checks passed
+
 ## how-to-guide-writer.skill
 
 - ✅ All checks passed
@@ -35,7 +39,7 @@ Date: /Users/pernelltoney/Documents/Projects/skills-agents
 
 ## Summary
 
-- **Total Skills**: 8
-- **Passed**: 6
+- **Total Skills**: 9
+- **Passed**: 7
 - **Warnings**: 2
 - **Failed**: 0
