@@ -1,461 +1,377 @@
 ---
 name: recruiting-materials
-description: Generate interview guides, evaluation forms, and reference check templates for recruiting. Use when hiring managers need interview preparation materials, structured evaluation forms, or reference check scripts. Creates customized guides based on job descriptions and role requirements.
+description: Generate professional hiring documents including phone screen scripts, interview guides, evaluation forms (1-10 rating scale), and reference check guides. Supports both single-candidate and batch generation modes with standardized and candidate-specific questions.
 ---
 
-# Recruiting Materials Generator
+# Recruiting Materials Skill
 
-Generate professional interview guides, evaluation forms, and reference check templates customized for specific roles and hiring needs.
+Generate consistent, professional hiring documents for any position. This skill creates standardized interview materials while allowing for candidate-specific customization based on concerns identified during resume screening.
 
 ## Overview
 
-This skill provides ready-to-use recruiting materials:
-- **Interview Guides**: Customized 60-90 minute interview structures with role-specific questions
-- **Interview Rating Forms**: Structured evaluation forms for interviewers to complete
-- **Reference Check Guides**: Scripts and forms for conducting professional reference checks
+This skill generates four types of recruiting documents:
 
-All materials are designed to work seamlessly with the `recruiting-evaluation` skill's two-stage framework.
+1. **Phone Screen Scripts** - 30-minute structured phone screens
+2. **Interview Guides** - Comprehensive in-person interview guides
+3. **Interview Evaluation Forms** - Standardized rating forms (1-10 scale)
+4. **Reference Check Guides** - Professional reference check scripts
 
----
-
-## When to Use This Skill
-
-Trigger this skill when user requests:
-- "Generate interview guide for [job title]"
-- "I need an interview rating form"
-- "Create reference check template"
-- "Help me prepare for interviewing candidates"
-- "What questions should I ask in the interview?"
+**Key Features:**
+- **Standardized Questions** - Same core questions for all candidates (ensures fairness)
+- **Candidate-Specific Questions** - Tailored questions to address individual concerns
+- **Clear Labeling** - All materials clearly distinguish standard vs. custom questions
+- **Batch Support** - Generate materials for one candidate or many at once
+- **Stage 2 Compatible** - Evaluation forms align with recruiting-evaluation skill's scoring model
 
 ---
 
 ## Material Types
 
-### 1. Interview Guide
+### 1. Phone Screen Scripts
 
-**Purpose:** Provide structured interview framework with customized questions based on job requirements.
+**Purpose:** 30-minute structured phone conversations to verify basic qualifications and interest before investing in full interviews.
 
-**When to generate:**
-- After candidate passes Stage 1 resume screening (85+ score)
-- Before conducting phone screens or in-person interviews
-- When preparing panel interviews
-
-**Customization based on:**
-- Job description and key responsibilities
-- Required competencies and skills
-- Industry/population specifics
-- Organizational culture/values
-- Resume concerns that need exploration
-
-**Output:** See `assets/interview-guide-template.md` for full template structure.
-
-### 2. Interview Rating Form
-
-**Purpose:** Standardized evaluation form for interviewers to complete during/after interviews.
-
-**When to generate:**
-- Alongside interview guide preparation
-- For all interviewers on panel interviews
-- Before conducting phone screens
+**When to generate:** After Stage 1 resume evaluation recommends phone screen (70+ score)
 
 **Key sections:**
-- Core competency ratings (1-10 scale)
-- Situational response assessments
-- Red flag checklist
-- Overall hiring recommendation
-- Comparison to resume expectations
+- Standard assessment questions (same for all candidates)
+- Candidate-specific verification questions (from Stage 1 concerns)
+- Logistics and practical matters
+- Role overview
+- Post-call evaluation
 
-**Output:** See `assets/interview-rating-form.md` for complete form.
+### 2. Interview Guides
 
-### 3. Reference Check Guide
+**Purpose:** Comprehensive guides for in-person/virtual interviews with behavioral and situational questions.
 
-**Purpose:** Professional script and structure for conducting reference checks.
-
-**When to generate:**
-- After strong interview performance
-- Before making final hiring decision
-- When proceeding to Stage 2 evaluation
+**When to generate:** After successful phone screen, before scheduling interviews
 
 **Key sections:**
-- Opening script and context setting
-- Performance and competency questions
-- Interpersonal and cultural fit questions
-- Critical assessment questions
-- Reference rating and notes
+- Pre-interview preparation checklist
+- Time-structured interview flow
+- Standard competency-based questions (ALL candidates)
+- Candidate-specific verification questions (THIS candidate only)
+- Cultural fit assessment
+- Post-interview reminders
 
-**Output:** See `assets/reference-check-guide.md` for full template.
+### 3. Interview Evaluation Forms
 
----
+**Purpose:** Standardized 1-10 rating forms that contribute 50% to Stage 2 final decision.
 
-## How to Generate Customized Materials
+**When to generate:** Before interviews (provide to all interviewers)
 
-### Interview Guide Generation
+**Key sections:**
+- Core competency ratings (1-10 scale for each)
+- Overall interview performance rating (converts to 0-100 for Stage 2)
+- Red flags checklist
+- Strengths and concerns
+- Hiring recommendation with rationale
 
-When user requests an interview guide, follow this process:
+### 4. Reference Check Guides
 
-**1. Gather Information**
+**Purpose:** Professional scripts for checking references to validate candidate qualifications.
 
-Ask for or extract from provided materials:
-- Job title and department
-- Key responsibilities (3-5 main duties)
-- Required competencies (technical, soft skills, leadership)
-- Must-have vs. preferred qualifications
-- Organizational values/culture keywords
-- Industry or population specifics
-- Any resume concerns from Stage 1 screening
+**When to generate:** For finalist candidates before final hiring decision
 
-**2. Customize Questions**
-
-Using the template from `assets/interview-guide-template.md`:
-
-**Behavioral Questions:**
-- Map required competencies to STAR method questions
-- Create 4-5 behavioral questions tied to success factors
-- Include follow-up probes for depth
-
-Example:
-```
-Required Competency: Project Management
-→ Behavioral Q: "Tell me about a time you managed a complex project with competing priorities. Walk me through your approach."
-→ Follow-up: "What would you do differently if you faced that situation today?"
-```
-
-**Situational Scenarios:**
-- Create 2-3 realistic scenarios the person will face in role
-- Base scenarios on actual job challenges
-- Include ethical/values-based scenario
-
-Example:
-```
-Role: Campus Minister to Graduate Students
-→ Scenario: "A doctoral student comes to you in crisis three weeks before their dissertation defense. They're questioning their faith and career path. You have 15 minutes before your next commitment. What do you do?"
-```
-
-**Technical/Role-Specific:**
-- Include 3-4 questions testing required knowledge or skills
-- Match complexity to role level (entry vs. senior)
-- Allow candidate to demonstrate expertise
-
-**Red Flag Probes (if applicable):**
-- Address any concerns from Stage 1 resume screening
-- Employment gaps, job hopping, skill currency, etc.
-- Frame professionally, give candidate chance to explain
-
-**3. Format for Use**
-
-- Use clear timing structure (0:00-0:05 Welcome, etc.)
-- Include space for interviewer notes
-- Provide rating scale (1-10) for each question
-- Add post-interview reflection section
-
-**4. Pair with Rating Form**
-
-Always provide the interview rating form alongside the guide so interviewer can complete evaluation.
-
-### Interview Rating Form Generation
-
-Use the template from `assets/interview-rating-form.md` as-is, or customize:
-
-**Customization options:**
-- Add role-specific competencies to Part 1
-- Tailor scenario questions in Part 2
-- Adjust red flags checklist for role context
-- Keep standard structure for Stage 2 compatibility
-
-**Important:** Form must produce:
-- Overall interview rating (1-10)
-- Hiring recommendation category
-- Specific observations and notes
-
-These feed directly into Stage 2 evaluation (50% weight).
-
-### Reference Check Guide Generation
-
-Use the template from `assets/reference-check-guide.md` with minor customization:
-
-**Customize Section 2: Performance Questions**
-- Add 1-2 role-specific questions
-- Ask about key competencies from job description
-
-Example:
-```
-Standard Q: "What were their greatest strengths?"
-+ Role-Specific Q: "This role requires strong data analysis skills. How did [Candidate] demonstrate analytical thinking?"
-```
-
-**Keep standardized:**
-- Opening script and rapport building
-- Would-rehire question
-- Red flag probes section
-- Rating structure (1-10)
-
-References produce 1-10 ratings that convert to 0-100 scale for Stage 2 (25% weight).
+**Key sections:**
+- Opening script and relationship verification
+- Performance assessment questions
+- Competency validation
+- "Would rehire?" critical question
+- Candidate-specific validation questions
+- Post-call evaluation (contributes 25% to Stage 2)
 
 ---
 
-## Output Format
+## How to Use This Skill
 
-When generating materials, provide:
+### Single Candidate Mode
 
-### For Interview Guide Requests:
+**Request format:**
+- "Generate [material type] for [candidate name] for [job title]"
+- "Create phone screen script for Maria Rodriguez for Senior Campus Minister"
+- "I need an interview guide for John Smith for Associate Director position"
 
-```
-INTERVIEW GUIDE
-Position: [Job Title]
-Department: [Department]
-Prepared for: [Interviewer Name]
+**Provide when requesting:**
+- Job title and description
+- Candidate name
+- Candidate-specific verification questions (if from Stage 1 evaluation)
+- Key competencies to assess
 
-[Full customized interview guide using template structure]
+### Batch Mode
 
-═══════════════════════════════════════════════════
-PAIRED INTERVIEW RATING FORM
-═══════════════════════════════════════════════════
+**Request format:**
+- "Generate [material type] for all candidates in [list/evaluation]"
+- "Create interview guides for these 4 finalists: [names]"
+- "I need phone screen scripts for all candidates who scored 70+"
 
-[Include the interview rating form so interviewer has both documents]
-```
-
-### For Interview Rating Form Requests:
-
-```
-[Provide complete interview rating form from assets/interview-rating-form.md]
-
-This form should be completed during or immediately after the interview and will be used in Stage 2 final evaluation (weighted at 50%).
-```
-
-### For Reference Check Guide Requests:
-
-```
-[Provide complete reference check guide from assets/reference-check-guide.md with any role-specific customizations]
-
-Conduct 2-3 reference checks per finalist candidate. Average the ratings for Stage 2 evaluation (weighted at 25%).
-```
+**Output:** Individual materials for each candidate with standardized questions consistent across all, but candidate-specific sections tailored to each person.
 
 ---
 
-## Integration with recruiting-evaluation Skill
+## Template Structure
 
-These materials support the two-stage evaluation framework:
+All materials follow this consistent structure:
 
-**Stage 1 → Materials Generation:**
-```
-User: [Runs Stage 1 resume screening]
-recruiting-evaluation: "Candidate scored 88 - ADVANCE TO INTERVIEW"
-User: "Generate interview guide for this role"
-recruiting-materials: [Creates customized guide + rating form]
-```
+**🔵 STANDARD SECTIONS**
+- Same for ALL candidates for this position
+- Ensures fair comparison
+- Required for legal compliance
 
-**Interview → Stage 2:**
-```
-User: [Conducts interview using guide, completes rating form]
-User: [Conducts reference checks using guide]
-User: "Evaluate final hiring decision with interview rating of 9/10 and references averaging 8.5/10"
-recruiting-evaluation: [Performs Stage 2 evaluation with Resume 25% + Interview 50% + References 25%]
-```
+**🟡 CANDIDATE-SPECIFIC SECTIONS**
+- Unique to THIS candidate
+- Addresses Stage 1 concerns/gaps
+- Clearly labeled so interviewers know context
 
 ---
 
-## Material Templates
+## Integration with Recruiting-Evaluation Skill
 
-All full templates are stored in the `assets/` directory:
+This skill works hand-in-hand with the `recruiting-evaluation` skill:
 
-- `assets/interview-guide-template.md` - Complete interview guide structure
-- `assets/interview-rating-form.md` - Standardized evaluation form
-- `assets/reference-check-guide.md` - Reference check script and form
+**Workflow:**
+1. User provides resume → `recruiting-evaluation` runs Stage 1
+2. Stage 1 outputs candidate-specific verification questions
+3. User requests phone screen script → `recruiting-materials` generates it (includes verification questions)
+4. After phone screen passes → `recruiting-materials` generates interview guide + evaluation form
+5. After interview → interviewer completes evaluation form
+6. User provides completed form → `recruiting-evaluation` runs Stage 2
+7. Stage 2 uses interview rating (50%), resume score (25%), references (25%)
 
-These templates are:
-- Copy-paste ready for users
-- Formatted for printing or digital use
-- Compatible with Stage 2 evaluation scoring
-- Customizable while maintaining structure
-
----
-
-## Best Practices
-
-### Interview Guide Design
-- ✓ Match questions to actual job demands, not generic skills
-- ✓ Include mix of behavioral, situational, and technical questions
-- ✓ Provide realistic time allocations
-- ✓ Leave space for candidate questions (reveals priorities)
-- ✓ Include immediate post-interview reflection section
-
-### Interview Rating Form Usage
-- ✓ Complete within 15 minutes of interview ending
-- ✓ Use specific examples to justify ratings
-- ✓ Be honest about red flags (they matter for Stage 2)
-- ✓ Compare to resume expectations explicitly
-- ✓ Trust your observations (50% of final decision)
-
-### Reference Check Conduct
-- ✓ Conduct at least 2-3 references per finalist
-- ✓ Ask for specific examples, not just opinions
-- ✓ Listen for what's NOT said (lukewarm = concerning)
-- ✓ Probe on interview concerns if applicable
-- ✓ Document immediately while fresh
+**Key Connection Points:**
+- Stage 1 verification questions → included in phone screen scripts and interview guides
+- Evaluation form ratings → feed into Stage 2 scoring (50% weight)
+- Reference check ratings → feed into Stage 2 scoring (25% weight)
 
 ---
 
 ## Usage Examples
 
-### Example 1: Generating Interview Guide
+### Example 1: Phone Screen Script Generation
 
-**User:** "Generate an interview guide for a Senior Campus Minister position working with graduate students. The job requires pastoral skills, program development, Ignatian spirituality knowledge, and interfaith competence."
+**User Request:**
+"Generate phone screen script for Maria Rodriguez for Senior Campus Minister. She scored 88 in Stage 1. Verification questions: (1) How have you incorporated contemplative practices? (2) Experience with diverse faith traditions? (3) Largest challenge with graduate students?"
 
-**Response:**
+**Generated Output:**
 ```
-INTERVIEW GUIDE
-Position: Senior Campus Minister (Graduate Students)
-Department: Campus Ministry
-Interview Duration: 75 minutes
+PHONE SCREEN SCRIPT
 
-[Provides fully customized guide including:]
+Position: Senior Campus Minister
+Candidate: Maria Rodriguez
+Duration: 30 minutes
 
-PART 3: BEHAVIORAL QUESTIONS (30 minutes)
+[Opening script with candidate name]
 
-[Pastoral Skills]
-Q: "Describe a time when you had to provide spiritual support to someone in crisis while balancing multiple commitments. What was your approach?"
-Follow-up: "How do you practice self-care to sustain your ministry?"
-RATING: ___/10  NOTES:
+SECTION 1: STANDARD ASSESSMENT QUESTIONS
+(These questions are asked of ALL candidates)
 
-[Program Development]
-Q: "Tell me about a program or initiative you developed from scratch. What was the need, your approach, and the outcome?"
-Follow-up: "How did you measure success?"
-RATING: ___/10  NOTES:
+1. Walk me through your campus ministry experience...
+2. How do you approach spiritual formation with graduate students?
+3. Describe your experience building community...
+4. Tell me about your approach to interfaith dialogue...
+5. What attracts you to Jesuit higher education?
 
-[Ignatian Spirituality - if mentioned in resume]
-Q: "How have you incorporated Ignatian practices like discernment or the Examen into your ministry?"
-Follow-up: "Give an example of guiding someone through an Ignatian discernment process."
-RATING: ___/10  NOTES:
+SECTION 2: CANDIDATE-SPECIFIC VERIFICATION QUESTIONS
+(These questions are unique to Maria and address Stage 1 concerns)
 
-OR
+NOTE: These questions were generated because Maria's application showed limited explicit Ignatian spirituality experience.
 
-[Ignatian Spirituality - if NOT mentioned]
-Q: "Tell me about your experience with contemplative spiritual practices. Which traditions or approaches have you found most effective with young adults?"
-Follow-up: "How do you adapt spiritual practices for people at different stages of faith development?"
-NOTE TO INTERVIEWER: Assess openness to learning Ignatian tradition
-RATING: ___/10  NOTES:
+1. How have you incorporated contemplative practices into your ministry work?
+2. Can you describe your experience working with diverse faith traditions?
+3. What has been your largest challenge ministering to graduate students?
 
-[Interfaith Competence]
-Q: "Describe a situation where you navigated religious diversity or interfaith dialogue. What was challenging and what did you learn?"
-Follow-up: "How do you maintain your own faith identity while honoring others' traditions?"
-RATING: ___/10  NOTES:
-
-PART 4: SITUATIONAL SCENARIOS (15 minutes)
-
-[SCENARIO 1: Pastoral Crisis]
-"A doctoral student comes to you three weeks before their dissertation defense. They're experiencing a faith crisis and questioning their entire career path. You have your next appointment in 15 minutes. Walk me through how you'd handle this."
-
-Look for:
-• Triage and prioritization
-• Presence and empathy
-• Appropriate boundaries
-• Follow-up planning
-RATING: ___/10  NOTES:
-
-[SCENARIO 2: Values Conflict]
-"A graduate student leader wants to host an event that conflicts with university Catholic identity guidelines, but they're passionate about the cause and it's for social justice. How do you navigate this?"
-
-Look for:
-• Ignatian discernment approach
-• Balancing pastoral care and institutional policy
-• Creative problem-solving
-• Accompaniment skills
-RATING: ___/10  NOTES:
-
-[... continues with full guide ...]
-
-═══════════════════════════════════════════════════
-PAIRED INTERVIEW RATING FORM
-═══════════════════════════════════════════════════
-
-[Includes complete rating form]
+[Logistics, role overview, closing, evaluation sections]
 ```
 
-### Example 2: Interview Rating Form Only
+### Example 2: Batch Interview Guides
 
-**User:** "I need the standard interview rating form"
+**User Request:**
+"Create interview guides for 3 finalists: Maria Rodriguez, John Smith, Sarah Johnson. Position is Senior Campus Minister. Key competencies: pastoral care, community building, Ignatian spirituality, program development, interfaith engagement."
 
-**Response:**
+**Generated Output:**
 ```
-[Provides complete interview rating form from assets]
+[THREE SEPARATE GUIDES]
 
-CANDIDATE INTERVIEW EVALUATION FORM
-Role: _______________________
-Candidate: ___________________
-Interviewer: _________________
-Date: _______  Time: _______
-Interview Type: ☐ Phone Screen ☐ In-Person ☐ Panel
+INTERVIEW GUIDE #1: MARIA RODRIGUEZ
 
-[Full form with all sections...]
+[Standard sections same for all three]
+🔵 STANDARD ASSESSMENT QUESTIONS (ALL CANDIDATES):
+1. Pastoral Care: "Tell me about a time you supported someone through a spiritual crisis..."
+2. Community Building: "Describe how you built community in a diverse campus setting..."
+3. Ignatian Spirituality: "How do you integrate Ignatian practices into ministry?"
+4. Program Development: "Walk me through a program you developed from scratch..."
+5. Interfaith Engagement: "Describe your approach to interfaith dialogue..."
 
-This form should be completed immediately after the interview. Your ratings will be weighted at 50% in the final hiring decision (Stage 2 evaluation).
+🟡 MARIA-SPECIFIC QUESTIONS:
+1. [Her verification question about contemplative practices]
+2. [Her verification question about graduate students]
+
+---
+
+INTERVIEW GUIDE #2: JOHN SMITH
+
+[Same 5 standard questions as Maria's guide]
+
+🟡 JOHN-SPECIFIC QUESTIONS:
+1. [His unique verification questions based on his Stage 1 evaluation]
+
+[And so on for Sarah Johnson...]
 ```
 
-### Example 3: Reference Check Guide
+### Example 3: Evaluation Form
 
-**User:** "Create a reference check template for the campus minister role"
+**User Request:**
+"Generate interview evaluation form for Senior Campus Minister position."
 
-**Response:**
+**Generated Output:**
 ```
-REFERENCE CHECK FORM
-Candidate: ___________________
-Position: Senior Campus Minister (Graduate Students)
-Reference Name: _______________
-Reference Title/Relationship: ______________
-Dates Working Together: _______
-Checked By: _________  Date: _________
+INTERVIEW EVALUATION FORM
 
-[Standard opening script and rapport building]
+Position: Senior Campus Minister
+Candidate Name: _____________________
 
-SECTION 2: PERFORMANCE & COMPETENCIES (Customized)
+INSTRUCTIONS: Rate each competency 1-10. Your ratings contribute 50% to final hiring decision.
 
-[Standard questions...]
+CORE COMPETENCIES (🔵 Same for ALL candidates):
 
-4. [ROLE-SPECIFIC QUESTION]
-"This role requires strong pastoral presence with graduate students going through transition and crisis. How did [Candidate] demonstrate pastoral care skills in your experience together?"
+Competency 1: Pastoral Care
+Rating: ☐1 ☐2 ☐3 ☐4 ☐5 ☐6 ☐7 ☐8 ☐9 ☐10
+Evidence/Notes: ________________
 
-5. [ROLE-SPECIFIC QUESTION]
-"The position involves developing and growing ministry programs. Can you give an example of how [Candidate] built or improved a program or initiative?"
+Competency 2: Community Building
+Rating: ☐1 ☐2 ☐3 ☐4 ☐5 ☐6 ☐7 ☐8 ☐9 ☐10
+Evidence/Notes: ________________
 
-[Continues with full reference check guide...]
+[Continue for all 5 competencies]
+
+OVERALL INTERVIEW RATING: ___/10
+
+This rating × 10 = /100 for Stage 2 (weighted at 50%)
+
+HIRING RECOMMENDATION:
+☐ Strong Hire ☐ Hire ☐ Maybe ☐ No Hire
+
+[Red flags checklist, strengths, concerns sections...]
+```
+
+### Example 4: Reference Check Guide
+
+**User Request:**
+"Generate reference check guide for Maria Rodriguez. We're calling her previous supervisor at University of San Diego to verify her campus ministry experience."
+
+**Generated Output:**
+```
+REFERENCE CHECK GUIDE
+
+Candidate: Maria Rodriguez
+Position: Senior Campus Minister
+Reference: [To be filled in]
+Relationship: Former Supervisor
+
+[Opening script]
+
+STANDARD QUESTIONS (for all references):
+1. Working relationship and dates?
+2. Overall performance assessment?
+3. Greatest strengths?
+4. Areas for development?
+5. Example of best work?
+6. Working style and cultural fit?
+7. How did they handle feedback?
+8. Why did they leave?
+9. Would rehire? (CRITICAL)
+
+MARIA-SPECIFIC VERIFICATION:
+🟡 "Maria mentioned limited experience with Ignatian spirituality in her application. Can you speak to how she approaches contemplative practices and spiritual formation?"
+
+RATING: ___/10
+
+[This rating contributes 25% to Stage 2 final decision]
 ```
 
 ---
 
-## Tips for Effective Materials
+## Best Practices
 
-### Interview Guides
-- Questions should feel conversational, not interrogative
-- Mix of challenging and relationship-building questions
-- Allow space for candidate personality to emerge
-- Include "culture add" not just "culture fit" questions
+### Fairness & Legal Compliance
 
-### Rating Forms
-- Use 1-10 scale (don't use 1-5, less granular)
-- Require written notes, not just numbers
-- Include "would you want to work with this person?" question
-- Force comparison to resume expectations
+✓ **Use identical standardized questions** for all candidates
+✓ **Only vary candidate-specific sections** based on resume gaps
+✓ **Rate against requirements**, not against other candidates
+✓ **Document specific examples** for all ratings
+✓ **Avoid protected characteristic questions** (age, religion, family status, etc.)
+✓ **Get candidate permission** before checking references
 
-### Reference Checks
-- Warm, professional tone in script
-- Listen for enthusiasm level (or lack thereof)
-- "Would rehire?" is the most telling question
-- Code words matter: "adequate" = not great, "tries hard" = struggled
+### Quality & Consistency
+
+✓ **Complete evaluation forms immediately** after interviews (while fresh)
+✓ **Check minimum 2-3 references** (not just one)
+✓ **Use verification questions strategically** (only what you need to verify)
+✓ **Keep all materials for 1-2 years** (for compliance/recordkeeping)
+✓ **File naming convention**: Position_MaterialType_CandidateName_Date.md
+
+### Effective Usage
+
+✓ **Phone screens first** - even for strong candidates (saves time)
+✓ **Print evaluation forms** - easier than typing during interview
+✓ **Brief interviewers beforehand** - review standardized questions
+✓ **Take notes during interviews** - support your ratings with evidence
+✓ **Be consistent** - don't deviate from standardized questions
 
 ---
 
-## When NOT to Use This Skill
+## When to Use This Skill
 
-**Don't use this skill for:**
-- Actual candidate evaluation (use recruiting-evaluation skill)
-- Resume screening decisions
-- Final hiring recommendations
-- Interview coaching or training
+**Trigger when user requests:**
+- "Generate phone screen script"
+- "Create interview guide"
+- "I need an evaluation form"
+- "Reference check template"
+- "Interview materials for [position]"
+- "Hiring documents for [candidate]"
 
-**Use recruiting-evaluation skill instead when:**
-- Evaluating candidate resumes
-- Making interview/no-interview decisions
-- Synthesizing interview results into hiring decision
-- Comparing multiple candidates
+**Trigger phrase examples:**
+- "Make interview materials"
+- "Prepare for phone screen with [candidate]"
+- "Generate forms for upcoming interviews"
+- "Need reference check script"
 
-These two skills work together: recruiting-materials creates the tools, recruiting-evaluation uses them to make decisions.
+---
+
+## References & Resources
+
+For detailed templates and question banks:
+- `templates/phone-screen-template.md` - Base phone screen structure
+- `templates/interview-guide-template.md` - Base interview guide structure
+- `templates/evaluation-form-template.md` - Base evaluation form structure
+- `templates/reference-check-template.md` - Base reference check structure
+- `references/question-banks.md` - Role-specific question library
+
+For candidate evaluation:
+- Use `recruiting-evaluation` skill for Stage 1 (resume screening) and Stage 2 (final decision)
+- This skill generates the TOOLS for evaluation
+- recruiting-evaluation makes the DECISIONS
+
+---
+
+## Customization
+
+All materials can be customized for:
+
+**Your organization:**
+- Add mission statement to interview guides
+- Include organizational values in assessment
+- Customize branding and language
+- Add required legal disclosures
+
+**Specific roles:**
+- Technical roles: add coding exercises, technical assessments
+- Leadership roles: add case studies, strategic thinking questions
+- Creative roles: add portfolio reviews
+- Remote roles: add virtual work and communication questions
+
+**To customize:**
+- Modify templates in `templates/` folder
+- Add role-specific questions to `references/question-banks.md`
+- Adjust competencies based on job description
+

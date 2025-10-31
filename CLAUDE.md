@@ -4,22 +4,23 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Purpose
 
-This is a skills-agents workspace for organizing and developing Claude Code custom skills. Skills are automation workflows that process data files (typically Excel/CSV exports) and generate formatted reports.
+This is a GitHub repository for managing custom skills and agents used with Claude Desktop and Claude Code. The repository provides version control for all skills, allowing them to be edited as needed while maintaining a history of changes. Skills are automation workflows that process data files (typically Excel/CSV exports) and generate formatted reports.
 
 ## Architecture Overview
 
 ### Symlink-Based Skill System
 
-Skills live in `skills/` but are accessed by Claude Code via symlinks in `~/.claude/skills/`:
+Skills live in `skills/` but are accessed by Claude Desktop and Claude Code via symlinks in `~/.claude/skills/`:
 
 ```
 ~/.claude/skills/position-review-skill  →  ~/Projects/skills-agents/skills/position-review-skill
 ```
 
 **Why this matters:**
-- Skills are edited here but auto-detected by Claude Code globally
+- Skills are edited and version-controlled in this GitHub repository
+- Changes are auto-detected by Claude Desktop and Claude Code globally via symlinks
 - Multiple projects can reference the same skill library
-- Version control stays in one place (this repo)
+- All skill modifications are tracked with Git for version history
 
 ### Data Flow Pattern
 
@@ -42,11 +43,11 @@ data/outputs/[task-name]/       ← Generated reports
 ./scripts/view-structure.sh
 ```
 
-### Sync skills to Claude Code after changes
+### Sync skills to Claude platforms after changes
 ```bash
 ./scripts/sync-skills.sh
 ```
-**When to run:** After creating/modifying any skill, or if `~/.claude/skills/` symlinks are broken.
+**When to run:** After creating/modifying any skill, after pulling changes from GitHub, or if `~/.claude/skills/` symlinks are broken. This ensures your GitHub-managed skills are available to Claude Desktop and Claude Code.
 
 ### Run a skill directly (for testing)
 ```bash
@@ -59,7 +60,7 @@ python ../../../skills/position-review-skill/process_positions.py input-file.xls
 ### Anatomy of a Skill
 
 Each skill directory must contain:
-- **SKILL.md** - Skill metadata and instructions (required by Claude Code)
+- **SKILL.md** - Skill metadata and instructions (required by Claude Desktop and Claude Code)
 - **Processing script(s)** - Python/bash/etc. that does the actual work
 - **README.md** - User-facing documentation
 
@@ -99,7 +100,7 @@ description: What the skill does and when to use it (1-2 sentences)
 ---
 ```
 
-Claude Code uses `description` to auto-select the skill based on user requests and file context.
+Claude Desktop and Claude Code use the `description` to auto-select the skill based on user requests and file context.
 
 ## Existing Skills
 
@@ -131,13 +132,17 @@ budget-data__2025-Q4.xlsx
 Position_Review_Meetings_10-21-2025.xlsx
 ```
 
-## .gitignore Strategy
+## Version Control Strategy
 
-- Data files (`*.xlsx`, `*.csv`) are ignored
+- Data files (`*.xlsx`, `*.csv`) are ignored by Git
 - Directory structure is preserved with `.gitkeep` files
-- Skills and scripts are version controlled
+- Skills and scripts are version controlled and pushed to GitHub
+- This allows maintaining skill code history without exposing sensitive institutional data
 
-This allows sharing skills without exposing sensitive institutional data.
+**GitHub Workflow:**
+- Edit skills locally in this repository
+- Commit and push changes to GitHub for version control
+- Pull updates on other machines and run `./scripts/sync-skills.sh` to sync
 
 ## Testing Skills
 

@@ -12,13 +12,12 @@ A comprehensive two-stage evaluation framework that separates initial resume scr
 This skill uses a two-stage process to evaluate candidates:
 
 ### Stage 1: Resume Screening (Initial Filter)
-- **Purpose:** Quickly identify which candidates to interview
+- **Purpose:** Quickly identify which candidates to phone screen
 - **Input:** Resume, cover letter, application materials
 - **Scoring:** Qualifications (40%) + Experience (40%) + Risk Flags (20%)
-- **Output:** 0-100 score + Text recommendation + Interview questions
+- **Output:** 0-100 score + Text recommendation + Candidate-specific verification questions
 - **Decision Thresholds:**
-  - **85-100: ADVANCE TO INTERVIEW** - Schedule in-person interview
-  - **70-84: PHONE SCREEN FIRST** - Conduct 30-min phone screen, then reassess
+  - **70-100: PHONE SCREEN** - Conduct 30-min phone screen (use recruiting-materials skill to generate script)
   - **0-69: DECLINE** - Send professional decline communication
 
 ### Stage 2: Post-Interview Evaluation (Final Decision)
@@ -28,7 +27,7 @@ This skill uses a two-stage process to evaluate candidates:
 - **Output:** Final hire/no-hire recommendation with detailed comparison
 - **Key Feature:** Human interviewer feedback is weighted at 50% - the most important factor
 
-**Critical Philosophy:** A strong resume gets you to the interview. Your performance in the interview determines if you get the job. Manager/interviewer observations override resume credentials.
+**Critical Philosophy:** A strong resume gets you to the phone screen. Passing the phone screen gets you to the interview. Your performance in the interview determines if you get the job. Manager/interviewer observations override resume credentials.
 
 ---
 
@@ -77,21 +76,48 @@ Evaluate relevant work history and career progression:
 
 #### Risk Flags (20% weight)
 
-Assess potential concerns (score inversely - higher is better):
+Assess potential concerns (score inversely - higher is better). This component has **4 sub-components, each weighted at 25%**:
 
-- Employment gaps (evaluate context before penalizing)
-- Job hopping patterns without clear progression
-- Relocation requirements (if role requires it)
-- Skill currency concerns (outdated technical skills)
-- Internal vs. external candidate considerations
-- Cultural/mission fit concerns based on application materials
+**1. Employment Gaps (25% of Risk Flags)**
+- Evaluate context before penalizing
+- Valid reasons: caregiving, education, health, layoffs, entrepreneurship
+- Focus on skills currency and ability to ramp up
+- **Scoring:** 100 = no gaps, 90 = explained gaps, 70 = moderate concerns, <60 = significant unexplained gaps
 
-**Scoring Guide:**
-- **90-100:** No risk flags, ideal scenario
-- **80-89:** Minor concerns, easily manageable
-- **70-79:** Moderate risk, needs discussion in interview
-- **60-69:** Notable concerns, requires careful evaluation
-- **Below 60:** High risk factors, significant concerns
+**2. Job Hopping Patterns (25% of Risk Flags)**
+- Frequent changes without clear progression
+- Look for explanations, patterns of growth, or valid reasons
+- Consider industry norms (tech vs. other sectors)
+- **Scoring:** 100 = stable progression, 90 = logical moves, 70 = some concerns, <60 = concerning pattern
+
+**3. Skill Currency (25% of Risk Flags)**
+- Outdated technical or professional skills
+- Continuous learning indicators
+- Relevance of recent experience
+- **Scoring:** 100 = current skills, 90 = mostly current, 70 = some outdated, <60 = significantly outdated
+
+**4. Application Quality (25% of Risk Flags)** ← **NEW: Includes Cover Letter Evaluation**
+- Cover letter customization and personalization
+- Understanding of organization/mission
+- Professional writing quality and attention to detail
+- Articulation of fit for this specific role
+- Addresses resume gaps or career transitions
+
+**Application Quality Scoring:**
+- **90-100:** Exceptional cover letter - Highly customized, demonstrates deep research about organization, compelling narrative about fit, excellent writing, addresses any resume gaps proactively
+- **80-89:** Strong cover letter - Personalized, clear articulation of fit and interest, professional writing, shows understanding of role/organization
+- **70-79:** Adequate cover letter - Generic but acceptable, basic customization, standard professional quality, or no cover letter when not required
+- **60-69:** Weak - Template letter with minimal customization, poor writing quality, or missing when expected/requested
+- **Below 60:** Major concerns - Unprofessional presentation, significant errors, missing when explicitly required, raises communication concerns
+
+**Overall Risk Flags Scoring Guide:**
+- **90-100:** No significant risk flags across all areas
+- **80-89:** Minor concerns in 1-2 areas, easily manageable
+- **70-79:** Moderate concerns, needs discussion in phone screen/interview
+- **60-69:** Notable concerns in multiple areas, careful evaluation needed
+- **Below 60:** High risk factors, significant concerns across multiple areas
+
+**Note:** Cover letters can influence all three main components (Qualifications, Experience, Risk Flags) by providing context, but Application Quality provides an explicit, measurable score within Risk Flags.
 
 ### Stage 1 Output Format
 
@@ -101,19 +127,40 @@ Present results as:
 
 **Candidate:** [Full Name]
 **Score:** [0-100] out of 100
-**Recommendation:** [ADVANCE TO INTERVIEW / PHONE SCREEN FIRST / DECLINE]
+**Recommendation:** [PHONE SCREEN / DECLINE]
+
+**Main Components:**
 
 | Component | Score | Weight | Weighted Score | Notes |
 |-----------|-------|--------|----------------|-------|
 | Qualifications | [0-100] | 40% | [calc] | [Brief assessment] |
 | Experience | [0-100] | 40% | [calc] | [Brief assessment] |
-| Risk Flags | [0-100] | 20% | [calc] | [Brief assessment] |
+| Risk Flags | [0-100] | 20% | [calc] | See detailed breakdown below |
 | **TOTAL** | | | **[Final Score]** | |
 
+**Risk Flags Detailed Breakdown (20% of total):**
+
+| Risk Factor | Score | Weight (of Risk Flags) | Contribution to Risk Flags | Notes |
+|-------------|-------|------------------------|---------------------------|-------|
+| Employment Gaps | [0-100] | 25% | [calc] | [Gap assessment] |
+| Job Hopping | [0-100] | 25% | [calc] | [Pattern assessment] |
+| Skill Currency | [0-100] | 25% | [calc] | [Currency assessment] |
+| Application Quality | [0-100] | 25% | [calc] | Cover letter evaluation |
+| **Risk Flags Total** | **[0-100]** | **100%** | | |
+
+**Application Quality Analysis:**
+- **Cover Letter Quality:** [Exceptional/Strong/Adequate/Weak/Missing]
+- **Application Quality Score:** [0-100]
+- **Impact on Overall Score:** This candidate's application quality [added/subtracted/had neutral effect on] their total score by approximately [X] points compared to a baseline adequate application (score 75).
+- **Evidence:**
+  - [Specific example 1 from cover letter - e.g., "Demonstrated deep research by referencing our recent program launch"]
+  - [Specific example 2 - e.g., "Proactively addressed career gap by explaining sabbatical for professional development"]
+  - [Specific example 3 - e.g., "Writing quality excellent with clear, professional communication" OR "Generic template with no personalization"]
+
 **Score Interpretation:**
-- **90-100:** ADVANCE TO INTERVIEW (Exceptional candidate)
-- **85-89:** ADVANCE TO INTERVIEW (Strong candidate)
-- **70-84:** PHONE SCREEN FIRST (Promising, needs verification)
+- **90-100:** PHONE SCREEN (Exceptional candidate)
+- **85-89:** PHONE SCREEN (Strong candidate)
+- **70-84:** PHONE SCREEN (Promising, needs verification)
 - **60-69:** DECLINE (Below threshold)
 - **0-59:** DECLINE (Not qualified)
 
@@ -127,17 +174,60 @@ Present results as:
 • [Concern 2 requiring verification]
 • [Concern 3 or "None significant"]
 
-**Decision: [ADVANCE TO INTERVIEW / PHONE SCREEN FIRST / DECLINE]**
+**Decision: [PHONE SCREEN / DECLINE]**
 
-**Key Questions for Interview:**
+**CANDIDATE-SPECIFIC VERIFICATION QUESTIONS:**
+*(These questions are unique to this candidate and should be asked during phone screen to address concerns/gaps identified in Stage 1)*
+
 1. [Question about gap/concern, if applicable]
 2. [Question about specific experience validation]
 3. [Question about role-critical skill demonstration]
 
 **Next Steps:**
-- **If 85+:** Schedule in-person interview and prepare interview guide (see recruiting-materials skill)
-- **If 70-84:** Conduct 30-minute phone screen to verify concerns, then reassess
+- **If 70+:** Use `recruiting-materials` skill to generate phone screen script (includes standard assessment questions + above verification questions)
 - **If <70:** Send professional decline communication
+- **After successful phone screen:** Use `recruiting-materials` skill to generate interview guide and evaluation form
+
+---
+
+### Cover Letter as Differentiator: Example
+
+**Scenario:** Two candidates with nearly identical qualifications and experience, but different application quality.
+
+**Candidate A: Sarah Johnson**
+- Qualifications: 85 (Masters in relevant field, required certifications)
+- Experience: 86 (5 years relevant experience, good progression)
+- Risk Flags: 78
+  - Employment Gaps: 90 (no significant gaps)
+  - Job Hopping: 85 (stable progression)
+  - Skill Currency: 90 (current skills)
+  - Application Quality: **65** (Generic template cover letter, minimal customization)
+- **Total Score: 83**
+- **Recommendation:** PHONE SCREEN
+
+**Candidate B: Michael Chen**
+- Qualifications: 85 (Masters in relevant field, required certifications) *Same as Sarah*
+- Experience: 86 (5 years relevant experience, good progression) *Same as Sarah*
+- Risk Flags: 91
+  - Employment Gaps: 90 (no significant gaps)
+  - Job Hopping: 85 (stable progression)
+  - Skill Currency: 90 (current skills)
+  - Application Quality: **95** (Exceptional - researched organization deeply, referenced specific programs, compelling fit narrative, excellent writing)
+- **Total Score: 87**
+- **Recommendation:** PHONE SCREEN
+
+**Key Differentiator:** Michael's exceptional cover letter added **4 points** to his overall score compared to Sarah's generic application.
+
+**Evidence from Michael's Cover Letter:**
+- Referenced the organization's recent strategic plan by name
+- Explained how his previous work at similar institution prepared him for specific challenges
+- Addressed potential concern about geographic relocation with clear commitment
+- Demonstrated writing ability critical for this role
+- Showed genuine interest through depth of research
+
+**Result:** Both candidates get phone screens, but Michael would be prioritized for earlier scheduling and is flagged as higher-priority candidate.
+
+**Transparency Note:** When presenting these scores to hiring managers, explicitly state: "Candidate B's superior application quality (scored 95 vs. Candidate A's 65) contributed to the 4-point score difference, demonstrating stronger communication skills and genuine interest in the organization."
 
 ---
 
@@ -243,15 +333,150 @@ When user provides completed interview form(s) and reference notes, generate:
 
 When evaluating multiple candidates simultaneously:
 
-### Stage 1 Batch Format
+### Stage 1 Batch Format Options
+
+**Option 1: Quick Summary Table**
 
 | Candidate | Score | Recommendation | Top Strength | Top Concern |
 |-----------|-------|----------------|--------------|-------------|
-| [Name 1] | [0-100] | [ADVANCE/PHONE/DECLINE] | [Brief] | [Brief] |
-| [Name 2] | [0-100] | [ADVANCE/PHONE/DECLINE] | [Brief] | [Brief] |
-| [Name 3] | [0-100] | [ADVANCE/PHONE/DECLINE] | [Brief] | [Brief] |
+| [Name 1] | [0-100] | [PHONE SCREEN/DECLINE] | [Brief] | [Brief] |
+| [Name 2] | [0-100] | [PHONE SCREEN/DECLINE] | [Brief] | [Brief] |
+| [Name 3] | [0-100] | [PHONE SCREEN/DECLINE] | [Brief] | [Brief] |
 
-Follow with detailed individual evaluations for each candidate who scored 70+.
+**Option 2: Tiered Summary (Notion-Ready Format)**
+
+Generate comprehensive markdown document organized by tiers:
+
+```markdown
+# [Position Title] Candidate Screening Summary
+
+## Overview
+
+[Summary paragraph: number of candidates, evaluation approach]
+
+---
+
+## Candidate Rankings
+
+### 🟢 TIER 1: EXCEPTIONAL CANDIDATES (90-100)
+
+**1. [Candidate Name]** ([Location]) — RECOMMENDED
+
+- **Current Role:** [Title] at [Company] ([Dates])
+- **Score:** [Score]/100 (Qualifications: [X] | Experience: [Y] | Risk Flags: [Z])
+- **Application Quality:** [Exceptional/Strong/Adequate/Weak] - [Brief note on cover letter]
+- **Key Strengths:**
+    - [Strength with evidence]
+    - [Strength with evidence]
+    - [Strength with evidence]
+- **Fit:** [Excellent/Very Good/Good]
+- **Potential Concern:** [Concern or "None significant"]
+
+### 🟡 TIER 2: STRONG CANDIDATES (85-89)
+
+[Same format as Tier 1]
+
+### 🟠 TIER 3: SOLID CANDIDATES (70-84)
+
+[Same format]
+
+### 🔴 TIER 4: BELOW THRESHOLD (<70)
+
+[Same format - DECLINE recommendations]
+
+---
+
+## Summary Matrix
+
+| Rank | Candidate | Score | Qualifications | Experience | Risk Flags | Cover Letter | Recommendation |
+|------|-----------|-------|----------------|------------|------------|--------------|----------------|
+| 1 | [Name] | [Score] | [Score] | [Score] | [Score] | Exceptional | ⭐⭐⭐ PHONE SCREEN |
+| 2 | [Name] | [Score] | [Score] | [Score] | [Score] | Strong | ⭐⭐⭐ PHONE SCREEN |
+| 3 | [Name] | [Score] | [Score] | [Score] | [Score] | Adequate | ⭐⭐ PHONE SCREEN |
+| 4 | [Name] | [Score] | [Score] | [Score] | [Score] | Weak | ⭐ CONSIDER |
+| ... | ... | ... | ... | ... | ... | ... | ... |
+
+---
+
+## Key Competency Assessment
+
+### Strong in [Competency 1]
+- **[Candidate Name]** — [Evidence]
+- **[Candidate Name]** — [Evidence]
+
+### Strong in [Competency 2]
+- **[Candidate Name]** — [Evidence]
+
+---
+
+## Strategic Recommendations
+
+**IMMEDIATE PHONE SCREENS (Tier 1):**
+1. **[Candidate Name]** — [Why]
+2. **[Candidate Name]** — [Why]
+
+**SECONDARY PHONE SCREENS (Tier 2):**
+1. **[Candidate Name]** — [Why]
+
+**DO NOT ADVANCE:**
+- **[Candidate Name]** — [Reason]
+
+---
+
+## Notes for Hiring Manager
+
+[Key insights, standout candidates, special considerations]
+
+---
+
+## How Scores Were Calculated
+
+### Scoring Methodology
+
+**Overall Score Formula:**
+- **Qualifications (40%)** - Educational background, certifications, credentials
+- **Experience (40%)** - Relevant work history, career progression, role alignment
+- **Risk Flags (20%)** - Inverse scoring (higher = fewer concerns)
+
+### Risk Flags Sub-Components (Each 25% of Risk Flags score)
+
+1. **Employment Gaps** - Context-based evaluation of career continuity
+2. **Job Hopping** - Pattern analysis of career stability and progression
+3. **Skill Currency** - Assessment of how current skills and knowledge are
+4. **Application Quality** - Cover letter evaluation and presentation
+
+**Application Quality specifically evaluates:**
+- Customization and personalization of cover letter
+- Understanding of organization/mission demonstrated
+- Professional writing quality and attention to detail
+- Clear articulation of fit for this specific role
+- Proactive addressing of resume gaps or transitions
+
+### Impact of Cover Letters on Rankings
+
+**Application Quality contributes 25% of Risk Flags score, which is 5% of the total score.**
+
+**What this means:**
+- An **exceptional cover letter** (score 95) vs. **adequate** (score 75) adds ~1 point to total
+- An **exceptional cover letter** (score 95) vs. **weak/missing** (score 60) adds ~1.75 points to total
+- An **exceptional cover letter** (score 95) vs. **poor** (score 40) adds ~2.75 points to total
+
+**For similar candidates (identical Qualifications and Experience):**
+Cover letter quality can be the deciding factor between candidates within the same tier or push a candidate into the next tier.
+
+**Example:** Two candidates both score 85 on Qualifications and 88 on Experience:
+- Candidate with **exceptional cover letter** → Total: ~87 (Strong Tier)
+- Candidate with **generic cover letter** → Total: ~84 (Solid Tier)
+- **Differentiator:** 3-point gap from application quality alone
+
+### Transparency Note
+
+All evaluations show the detailed breakdown of scores, including the Application Quality sub-score, so hiring managers can see exactly how cover letters influenced candidate rankings and understand the evidence-based rationale for recommendations.
+```
+
+This tiered format creates a markdown file ready to paste into Notion or share with stakeholders.
+
+Follow with detailed individual evaluations for candidates scoring 70+, including candidate-specific verification questions.
 
 ### Stage 2 Batch Format
 
@@ -305,15 +530,23 @@ See `references/green-flags.md` for comprehensive list.
 
 ## Integration with Recruiting Materials
 
-For interview guides, evaluation forms, and reference check templates:
+The `recruiting-materials` skill generates all documents needed for the hiring process:
 
 **Use the `recruiting-materials` skill to:**
-- Generate customized interview guides based on job description
-- Get interview rating forms (copy-paste ready)
-- Get reference check guides and scripts
-- Create role-specific evaluation rubrics
+- **Phone Screen Scripts** - 30-min scripts with standard assessment questions + candidate-specific verification questions
+- **Interview Guides** - Comprehensive guides with standardized assessment questions (same for all candidates) + candidate-specific questions
+- **Interview Evaluation Forms** - 1-10 rating scale forms aligned with Stage 2 scoring (Interview 50% weight)
+- **Reference Check Guides** - Standardized reference check scripts and rating forms
 
-Example: "Generate an interview guide for [job title]" or "I need an interview rating form"
+**Usage Examples:**
+- "Generate phone screen script for [candidate name] for [job title]" (includes verification questions from Stage 1)
+- "Create interview guide for [job title]" (standardized assessment questions)
+- "Generate evaluation form for [job title]" (Stage 2 compatible)
+- "I need a reference check guide"
+
+**Batch Mode:**
+- "Generate phone screen scripts for all candidates in my evaluation report"
+- "Create interview materials for top 3 candidates"
 
 ---
 
@@ -329,11 +562,11 @@ STAGE 1: RESUME SCREENING RESULTS
 
 Candidate: Maria Rodriguez
 Score: 88 out of 100
-Recommendation: ADVANCE TO INTERVIEW
+Recommendation: PHONE SCREEN
 
 [Full scoring breakdown table]
 
-Decision: ADVANCE TO INTERVIEW
+Decision: PHONE SCREEN
 
 Key Strengths:
 • 8 years progressive campus ministry experience at similar institutions
@@ -345,12 +578,14 @@ Key Concerns:
 • No direct experience with international student ministry
 • Need to verify approach to interfaith dialogue
 
-Key Questions for Interview:
+CANDIDATE-SPECIFIC VERIFICATION QUESTIONS:
+(Ask during phone screen to address concerns above)
+
 1. How have you incorporated contemplative practices into campus ministry?
 2. Describe your experience working with diverse faith traditions
 3. Tell me about your largest challenge ministering to graduate students
 
-Next Steps: Schedule in-person interview and use recruiting-materials skill to generate interview guide
+Next Steps: Use recruiting-materials skill to generate phone screen script (will include standard assessment questions + verification questions above)
 ```
 
 ### Example 2: Stage 2 Post-Interview Evaluation
@@ -424,9 +659,10 @@ Candidate C scored consistently (82/85/80) but didn't distinguish themselves bey
 
 ### Stage 1 (Resume Screening)
 - ✓ Be objective - score against requirements, not preferences
-- ✓ High scores earn an interview, not the job
-- ✓ Don't let a great resume blind you to potential interview red flags
-- ✓ Borderline candidates (70-84) deserve a phone screen opportunity
+- ✓ High scores (70+) earn a phone screen, not the job
+- ✓ Don't let a great resume blind you to potential red flags
+- ✓ All candidates scoring 70+ deserve a phone screen opportunity
+- ✓ Generate candidate-specific verification questions for each phone screen
 
 ### Stage 2 (Final Evaluation)
 - ✓ **Interview performance is 50% of the decision** - trust what you observed
@@ -437,10 +673,11 @@ Candidate C scored consistently (82/85/80) but didn't distinguish themselves bey
 - ✓ Document specific examples, not just feelings
 
 ### General Principles
-- ⚠ Resume shows potential; interview shows reality
+- ⚠ Resume shows potential; phone screen verifies basics; interview shows reality
 - ⚠ Skills can be taught; values and work ethic cannot
 - ⚠ Hiring the wrong person is expensive; taking time to find the right one is worth it
 - ⚠ When in doubt, keep looking
+- ⚠ Use recruiting-materials skill to generate consistent, professional hiring documents
 
 ---
 
@@ -450,7 +687,12 @@ Candidate C scored consistently (82/85/80) but didn't distinguish themselves bey
 - Resumes with job description
 - "Screen these candidates"
 - "Evaluate this applicant"
-- "Should I interview this person?"
+- "Should I phone screen this person?"
+
+**For batch evaluations with tiered Notion-ready format:**
+- "Evaluate all candidates and create a tiered summary"
+- "Screen these candidates and give me a Notion-ready report"
+- "Create a comprehensive candidate screening summary"
 
 **Trigger Stage 2 when user provides:**
 - Completed interview forms
@@ -459,9 +701,11 @@ Candidate C scored consistently (82/85/80) but didn't distinguish themselves bey
 - "Final evaluation for [candidate]"
 
 **Direct to recruiting-materials skill when user asks for:**
-- "Create interview guide"
+- "Create phone screen script"
+- "Generate interview guide"
 - "I need evaluation forms"
 - "Reference check template"
+- "Generate materials for [candidate]"
 
 ---
 

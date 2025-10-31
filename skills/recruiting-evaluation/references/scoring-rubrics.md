@@ -96,50 +96,194 @@ Detailed rubrics for scoring candidates in both Stage 1 (Resume Screening) and S
 
 **Note:** This component scores inversely - higher scores mean fewer/lower risks.
 
-**90-100 Points: No Risk Flags, Ideal Candidate**
-- No employment gaps (or well-explained unavoidable gaps)
-- Steady career progression without frequent moves
-- Internal candidate with positive track record
-- All skills current and recently applied
-- Strong cultural/mission fit evident in materials
-- No relocation required (or eager to relocate)
-- Enthusiastic, well-researched application
+Risk Flags consists of **4 sub-components, each weighted at 25%** of the Risk Flags score:
 
-**80-89 Points: Minor Concerns, Manageable**
-- Small employment gap with clear reason (education, caregiving, etc.)
-- One job change that makes sense
-- External candidate with solid references
-- Most skills current, minimal catch-up needed
-- Good cultural/mission alignment visible
-- Willing to relocate if needed
-- Thoughtful application
+#### 1. Employment Gaps (25% of Risk Flags)
 
-**70-79 Points: Moderate Risk, Needs Discussion**
-- Employment gap(s) requiring explanation in interview
-- Pattern of 2-3 year tenures without clear progression
-- External candidate needing cultural onboarding
-- Some skill currency concerns (technology has evolved)
-- Cultural/mission fit unclear from materials
-- Relocation may be challenging
-- Generic application materials
+**90-100 Points: No Gaps or Well-Explained**
+- Continuous employment with no gaps
+- OR gaps fully explained with valid reasons (caregiving, education, health, sabbatical, entrepreneurship)
+- Clear narrative of career journey
+- Skills remained current during any gaps
 
-**60-69 Points: Notable Concerns, Careful Evaluation**
-- Multiple unexplained employment gaps
-- Frequent job changes (every 1-2 years)
-- Limited information about candidate
-- Skills appear outdated
-- Potential cultural/mission misalignment
-- Unwilling or unable to relocate
-- Minimal effort in application
+**80-89 Points: Minor Gaps, Acceptable**
+- Short gap (3-6 months) with explanation
+- Career transition period that makes sense
+- Skills largely current
 
-**Below 60 Points: High Risk Factors**
-- Extensive unexplained employment gaps
-- "Job hopper" pattern (5+ roles in 5 years)
-- Red flags in online presence or references
-- Significantly outdated skill set
-- Clear cultural/mission misalignment
-- Cannot meet location requirements
-- Concerning application quality or content
+**70-79 Points: Moderate Gaps, Needs Clarification**
+- Gap of 6-12 months, explanation needed
+- Multiple small gaps
+- Some concern about skill currency
+
+**60-69 Points: Notable Gaps, Concerning**
+- Gap over 12 months without clear explanation
+- Multiple significant gaps
+- Skills may be outdated
+
+**Below 60 Points: Extensive Gaps**
+- Multiple years of unexplained gaps
+- Pattern of gaps suggesting reliability concerns
+- Skills significantly outdated
+
+---
+
+#### 2. Job Hopping Patterns (25% of Risk Flags)
+
+**90-100 Points: Stable, Progressive Career**
+- 3+ years average tenure
+- Each move shows clear progression
+- Logical career narrative
+- Strategic, intentional changes
+
+**80-89 Points: Mostly Stable**
+- 2-3 year average tenure
+- Most moves make sense
+- Some progression evident
+- Industry norms considered (e.g., tech)
+
+**70-79 Points: Some Concerns**
+- Multiple 1-2 year stints
+- Lateral moves without clear reason
+- Pattern needs explanation
+
+**60-69 Points: Notable Pattern**
+- Frequent changes (every 12-18 months)
+- No clear progression
+- Possible flight risk
+
+**Below 60 Points: Job Hopper**
+- 5+ roles in 5 years
+- No tenure over 18 months
+- Red flag pattern
+
+---
+
+#### 3. Skill Currency (25% of Risk Flags)
+
+**90-100 Points: Highly Current**
+- All skills reflect latest practices/technologies
+- Recent certifications or training
+- Active in professional development
+- Evidence of continuous learning
+
+**80-89 Points: Mostly Current**
+- Most skills are current
+- Some recent professional development
+- Stays reasonably up-to-date
+
+**70-79 Points: Some Outdated Skills**
+- Some skills behind current standards
+- Limited recent professional development
+- May need training to catch up
+
+**60-69 Points: Significantly Outdated**
+- Skills are 3-5 years behind
+- Little evidence of professional development
+- Would require substantial training
+
+**Below 60 Points: Very Outdated**
+- Skills are 5+ years outdated
+- No professional development evident
+- Major retraining required
+
+---
+
+#### 4. Application Quality (25% of Risk Flags) **← NEW**
+
+**Evaluates cover letter quality, professional presentation, and communication skills**
+
+**90-100 Points: Exceptional Application**
+- **Cover Letter:** Highly customized and researched
+  - References specific organizational programs, initiatives, or values by name
+  - Compelling narrative about fit that goes beyond job description
+  - Proactively addresses any resume gaps or career transitions
+  - Demonstrates deep understanding of organization's mission
+  - Excellent writing quality - clear, professional, error-free
+  - Shows genuine enthusiasm backed by research
+- **Overall Presentation:** Polished, professional, thoughtful
+- **Evidence:** Makes you eager to interview this person
+
+**80-89 Points: Strong Application**
+- **Cover Letter:** Personalized and professional
+  - Clear customization for this specific role and organization
+  - Good articulation of fit and interest
+  - Shows understanding of role requirements
+  - Professional writing quality with no major errors
+  - Demonstrates research about organization
+  - Addresses why this role makes sense in career trajectory
+- **Overall Presentation:** Professional and appropriate
+- **Evidence:** Makes you want to learn more about candidate
+
+**70-79 Points: Adequate Application**
+- **Cover Letter:** Generic but acceptable, OR no cover letter when not required
+  - Basic customization (mentions organization name)
+  - Standard statements about fit
+  - Acceptable professional quality
+  - May use some template language
+  - Limited specific research evident
+  - Standard career summary
+- **Overall Presentation:** Acceptable, professional
+- **Evidence:** Doesn't hurt or help the candidacy significantly
+
+**60-69 Points: Weak Application**
+- **Cover Letter:** Template letter OR missing when expected
+  - Minimal to no customization
+  - Could apply to any similar organization
+  - Generic statements only
+  - Some writing quality concerns (minor errors)
+  - No evidence of research
+  - Missing when cover letter was requested
+- **Overall Presentation:** Unprofessional or careless
+- **Evidence:** Raises concerns about communication skills or genuine interest
+
+**Below 60 Points: Poor Application Quality**
+- **Cover Letter:** Unprofessional OR missing when required
+  - Not customized at all (wrong organization name, wrong position)
+  - Significant writing errors (typos, grammar, formatting)
+  - Inappropriate tone or content
+  - Missing when explicitly required in posting
+  - Raises serious concerns about professionalism
+- **Overall Presentation:** Concerning
+- **Evidence:** Red flag for communication ability and attention to detail
+
+**What Makes a Cover Letter Exceptional:**
+- References specific, recent organizational accomplishments or initiatives
+- Explains not just "I'm qualified" but "here's why I'm the right fit for YOUR context"
+- Addresses potential concerns preemptively (e.g., explains career gap, relocation commitment)
+- Demonstrates understanding of organizational culture and values
+- Shows how their unique background brings value
+- Professional, error-free writing that demonstrates communication skills
+- Genuine enthusiasm supported by research, not generic excitement
+
+**What Makes a Cover Letter Weak:**
+- Template that could be sent to any organization
+- No specific research evident
+- Only restates resume without adding context
+- Grammatical errors or typos
+- Generic statements: "I am a team player," "I have strong communication skills"
+- Missing when it was requested or expected for the role
+
+**Impact on Total Score:**
+Application Quality is 25% of Risk Flags, which is 20% of total score.
+- Application Quality contributes **~5% to overall score**
+- Exceptional (95) vs. Weak (60) = ~1.75 point difference in total
+- Can be decisive between similarly qualified candidates
+
+---
+
+**Overall Risk Flags Score Calculation:**
+
+Risk Flags Total = (Employment Gaps × 0.25) + (Job Hopping × 0.25) + (Skill Currency × 0.25) + (Application Quality × 0.25)
+
+**Example:**
+- Employment Gaps: 90
+- Job Hopping: 85
+- Skill Currency: 90
+- Application Quality: 95
+- **Risk Flags Total:** (90 × 0.25) + (85 × 0.25) + (90 × 0.25) + (95 × 0.25) = 90
+
+---
 
 ---
 
