@@ -4,7 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Purpose
 
-This is a GitHub repository for managing custom skills and agents used with Claude Desktop and Claude Code. The repository provides version control for all skills, allowing them to be edited as needed while maintaining a history of changes. Skills are automation workflows that process data files (typically Excel/CSV exports) and generate formatted reports.
+This is a GitHub repository for managing custom skills and agents used with Claude Desktop and Claude Code.
+
+**Skills** (`skills/` directory) are automation workflows that process data files (typically Excel/CSV exports) and generate formatted reports. They are symlinked to `~/.claude/skills/` for automatic loading.
+
+**Agents** (`agents/` directory) are specialized AI assistants with domain expertise (React review, Supabase, optimization, etc.) that you invoke manually when needed. They serve as a version-controlled library of reusable prompts across all your projects.
+
+Both are version-controlled in this repository, allowing you to edit, improve, and maintain a history of changes while keeping your best automation tools and expert agents accessible from anywhere.
 
 ## Architecture Overview
 
@@ -35,6 +41,38 @@ data/outputs/[task-name]/       ← Generated reports
 ```
 
 **Critical:** When a skill runs from a working directory like `data/inputs/position-review/`, output paths are typically relative: `../../outputs/position-review/`
+
+### Agent Library System
+
+Agents are reusable AI assistants with specialized expertise stored in `agents/` for version control and cross-project use.
+
+```
+agents/react-reviewer/AGENT.md    ← Specialized React code review agent
+agents/supabase-expert/AGENT.md   ← Supabase integration expert
+agents/code-optimizer/AGENT.md    ← Performance optimization agent
+```
+
+**Key differences from skills:**
+
+| Feature | Skills | Agents |
+|---------|--------|--------|
+| **Location** | `~/.claude/skills/` (symlinked) | `agents/` (repo only) |
+| **Auto-loaded** | Yes, by Claude Desktop | No, manual invoke |
+| **Use case** | Data processing workflows | Specialized expertise |
+| **Invocation** | Automatic based on context | Manual via Task tool or copy to project |
+
+**When to use agents:**
+- You need specialized expertise (e.g., React review, Supabase integration)
+- You want consistent behavior across multiple projects
+- You want version-controlled prompts you can improve over time
+- You need to invoke an expert for specific subtasks
+
+**Usage patterns:**
+1. **Task tool invocation:** Ask Claude to read and use an agent from `agents/[name]/AGENT.md`
+2. **Copy to project:** Copy agent instructions to a project's `.claude/` directory
+3. **Direct reference:** Reference the agent by path when you need its expertise
+
+See [agents/README.md](agents/README.md) for full documentation on creating and using agents.
 
 ## Key Commands
 
