@@ -29,6 +29,10 @@ Date: /Users/pernelltoney/Documents/Projects/skills-agents
 
 - ✅ All checks passed
 
+## shipping-coach
+
+- ✅ All checks passed
+
 ## skill-creator
 
 - ⚠️ Description contains 'anthropic' or 'claude' - verify intentional
@@ -39,7 +43,7 @@ Date: /Users/pernelltoney/Documents/Projects/skills-agents
 
 ## Summary
 
-- **Total Skills**: 9
-- **Passed**: 7
+- **Total Skills**: 10
+- **Passed**: 8
 - **Warnings**: 2
 - **Failed**: 0
