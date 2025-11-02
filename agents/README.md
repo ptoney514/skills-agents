@@ -140,6 +140,7 @@ git commit -m "Archive old-agent"
 - **Architecture:** Database design, API design, system architecture
 - **Testing:** Unit tests, integration tests, E2E tests
 - **Design & UX:** UI/UX design, site auditing, user flow analysis, design review
+- **Product & Growth:** MVP planning, PRDs, analytics, experiments, wireframes, launch plans
 
 ## Version Control Benefits
 
@@ -152,6 +153,7 @@ git commit -m "Archive old-agent"
 ## Examples
 
 See individual agent directories for specific examples of:
+- Product & Growth Lead for 0→1 MVPs ([product-growth-lead-0to1](./product-growth-lead-0to1/))
 - React component review ([react-stack-reviewer](./react-stack-reviewer/))
 - Supabase integration guidance ([supabase-dev-admin](./supabase-dev-admin/))
 - UI/UX design and accessibility ([ui-ux-designer](./ui-ux-designer/))
