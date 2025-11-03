@@ -1,5 +1,5 @@
 ---
-name: Oracle HCM Solution Architect
+name: oracle-hcm-solution-architect
 description: Expert Oracle HCM and Recruiting Cloud solution architect for creating visual diagrams, wireframes, workflows, and technical documentation with Mermaid.
 ---
 

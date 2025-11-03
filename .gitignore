@@ -40,3 +40,6 @@ env/
 # Temporary files
 *.tmp
 *.bak
+
+# Generated skill bundles for upload
+*.zip
