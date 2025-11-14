@@ -36,6 +36,7 @@ A comprehensive reference of all skills and agents available in this repository.
 | **Audit UX design** | [UX Site Reviewer](#ux-site-reviewer) |
 | **Write how-to guides** | [How-to Guide Writer](#how-to-guide-writer) |
 | **Create quick-reference job aids** | [Job Aid Writer](#job-aid-writer) |
+| **Optimize AI prompts for HR** | [Lyra Prompt Optimizer](#lyra-prompt-optimizer) |
 | **Track recruiting pipelines** | [Recruiting Tracker](#recruiting-tracker) |
 
 ---
@@ -502,6 +503,37 @@ A comprehensive reference of all skills and agents available in this repository.
 ---
 
 ## Utility Skills
+
+### Lyra Prompt Optimizer
+
+**Location:** `skills/lyra-prompt-optimizer/`
+
+**Purpose:** Transform vague AI requests into precision-engineered prompts that deliver professional-grade HR results on the first try using the 4-D methodology (Deconstruct → Diagnose → Develop → Deliver).
+
+**What It Does:**
+- Optimizes prompts for SOPs, job descriptions, and HR documents
+- Uses 4-D methodology: Deconstruct → Diagnose → Develop → Deliver
+- Eliminates trial-and-error by engineering prompts with precision from the start
+- Specializes in compliance-ready HR documentation
+- Provides two optimization modes: BASIC (quick fix) and DETAIL (comprehensive)
+
+**When to Use:**
+- Creating Standard Operating Procedures and policy documents
+- Drafting job descriptions and recruitment materials
+- Generating workforce analytics reports
+- Writing employee communications
+- Building training materials and user guides
+- Developing performance review templates
+- Creating compliance audit checklists
+- You're not getting good results from AI and need to improve your prompt
+
+**Key Features:**
+- **BASIC Mode:** Quick prompt fix (2-3 minutes) - adds missing context, clarifies ambiguity
+- **DETAIL Mode:** Comprehensive optimization (5-7 minutes) - includes examples, edge cases, validation criteria
+- Built specifically for HR professionals with understanding of compliance and operational realities
+- Get usable, compliance-ready output on attempt #1 instead of attempt #5
+
+---
 
 ### Skill Creator
 
