@@ -34,8 +34,8 @@ A comprehensive reference of all skills and agents available in this repository.
 | **Full-stack BI solution** | [Data Analytics Engineer](#data-analytics-engineer) |
 | **Review React code** | [React Stack Reviewer](#react-stack-reviewer) |
 | **Audit UX design** | [UX Site Reviewer](#ux-site-reviewer) |
-| **Process Oracle HCM exports** | [Position Review Skill](#position-review-skill) |
 | **Write how-to guides** | [How-to Guide Writer](#how-to-guide-writer) |
+| **Track recruiting pipelines** | [Recruiting Tracker](#recruiting-tracker) |
 
 ---
 
@@ -350,28 +350,6 @@ A comprehensive reference of all skills and agents available in this repository.
 
 ## Automation Skills
 
-### Position Review Skill
-
-**Location:** `skills/position-review-skill/`
-
-**Purpose:** Processes Oracle Cloud Recruiting requisitions and formats them for weekly position review meetings. Filters positions needing approval and creates structured Excel reports.
-
-**What It Does:**
-- Reads Oracle Cloud requisitions file (Excel format)
-- Filters positions with blank "Approved Date" (positions needing review)
-- Maps Oracle columns to Position Review Meeting format
-- Parses "Person Being Replaced" from comments
-- Creates formatted Excel output: `Position_Review_Meetings_[DATE].xlsx`
-
-**When to Use:**
-- Processing Oracle Cloud requisitions for weekly position review meetings
-- Filtering positions that need approval review
-- Formatting requisition data into standard meeting format
-
-**Output Format:** Excel file with ReqID, Title, School/Org, Recruiter, Status, Person Being Replaced, Hiring Manager, Salary, Justification, Campus, Grant Funded, Comments
-
----
-
 ### Recruiting Tracker
 
 **Location:** `skills/recruiting-tracker/`
@@ -571,7 +549,7 @@ skills-agents/
 │   └── [other agents]/
 │
 ├── skills/              # Automation workflows (auto-loaded)
-│   ├── position-review-skill/
+│   ├── recruiting-tracker/
 │   ├── how-to-guide-writer.skill/
 │   └── [other skills]/
 │
