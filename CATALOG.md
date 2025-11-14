@@ -35,6 +35,7 @@ A comprehensive reference of all skills and agents available in this repository.
 | **Review React code** | [React Stack Reviewer](#react-stack-reviewer) |
 | **Audit UX design** | [UX Site Reviewer](#ux-site-reviewer) |
 | **Write how-to guides** | [How-to Guide Writer](#how-to-guide-writer) |
+| **Create quick-reference job aids** | [Job Aid Writer](#job-aid-writer) |
 | **Track recruiting pipelines** | [Recruiting Tracker](#recruiting-tracker) |
 
 ---
@@ -375,6 +376,33 @@ A comprehensive reference of all skills and agents available in this repository.
 - Writing user documentation
 - Creating tutorials and guides
 - Explaining complex processes simply
+
+---
+
+### Job Aid Writer
+
+**Location:** `skills/job-aid-writer/`
+
+**Purpose:** Creates quick-reference job aids, checklists, flowcharts, decision trees, and visual reference materials for point-of-need performance support.
+
+**What It Does:**
+- Quick reference guides and cheat sheets
+- Process flowcharts and workflow diagrams
+- Decision trees and decision support tools
+- Checklists for task completion
+- Comparison tables and reference cards
+- One-page desktop references
+
+**When to Use:**
+- Employees need just-in-time guidance while performing tasks
+- Creating visual, scannable one-page references
+- Building decision support tools (which leave type to use, which form to complete)
+- Providing quick lookup guides for complex processes
+
+**How It Differs:**
+- **Job Aids:** Quick reference at point of need (1-2 pages, visual, scannable)
+- **SOPs:** Formal compliance documentation (3-10 pages, comprehensive)
+- **How-To Guides:** Educational training materials (5-20 pages, detailed)
 
 ---
 
