@@ -2,7 +2,7 @@
 
 A comprehensive reference of all skills and agents available in this repository.
 
-**Last Updated:** 2025-11-05
+**Last Updated:** 2025-11-14
 
 ---
 
@@ -28,7 +28,8 @@ A comprehensive reference of all skills and agents available in this repository.
 |------|---------------------|
 | **Write a comprehensive PRD** | [Product Manager](#product-manager-core) |
 | **Design system architecture** | [Technical Architect](#technical-architect) |
-| **Create polished UI mockups** | [UX/UI Designer](#uxui-designer) |
+| **Create pixel-perfect design systems** | [Pixel-Perfect Designer](#pixel-perfect-designer) |
+| **Extract CSS into style guides** | [CSS Style Extractor](#css-style-extractor) |
 | **Run A/B tests and analytics** | [Product Operations](#product-operations) |
 | **Fast MVP planning (0→1)** | [Product & Growth Lead 0→1](#product--growth-lead-01) |
 | **Full-stack BI solution** | [Data Analytics Engineer](#data-analytics-engineer) |
@@ -102,31 +103,44 @@ A comprehensive reference of all skills and agents available in this repository.
 
 ---
 
-### UX/UI Designer
+### Pixel-Perfect Designer
 
-**Location:** `agents/ux-ui-designer/`
+**Location:** `agents/pixel-perfect-designer/`
 
-**Purpose:** Expert in polished visual design, design systems, component libraries, user experience patterns, accessibility (WCAG), responsive design, and high-fidelity mockups.
+**Purpose:** Expert in Flow Engineering methodology for creating pixel-perfect, personalized design systems. Achieves high-fidelity UI design through structured, iterative workflows that move beyond generic AI output to truly on-brand, professional results.
 
 **Key Capabilities:**
-- User experience (UX) design (user research, journey maps, information architecture)
-- Visual design (UI) (visual hierarchy, typography, color theory, spacing)
-- Design systems & component libraries (buttons, forms, cards, modals, navigation)
-- Responsive design (mobile, tablet, desktop breakpoints)
-- Accessibility (WCAG 2.1 AA compliance, contrast, keyboard nav, alt text)
-- Design tools & deliverables (Figma, high-fidelity mockups, interactive prototypes)
-- Design process & workflow (discovery → ideation → high-fidelity → developer handoff)
+- **Flow Engineering Methodology** (4-step process: Layout → Scene → Animation → Scaling)
+- **Lo-Fi Mode:** ASCII wireframes for rapid layout iteration
+- **Hi-Fi Mode:** Complete design systems with comprehensive style guides
+- CSS extraction and style analysis from reference websites
+- Design system documentation (color, typography, spacing, shadows, animations)
+- Component scaling and consistency enforcement
+- Framework-agnostic output (React, iOS, print wireframes, static sites)
+- Animation/micro-interaction specifications
+- Production-ready component generation
 
 **When to Use:**
-- Creating high-fidelity, production-ready mockups
-- Building design systems with component libraries
-- Designing reusable UI components
-- Ensuring accessibility compliance (WCAG 2.1 AA)
-- Designing responsive layouts
-- Improving visual hierarchy, spacing, and typography
-- Conducting design critiques
+- Building new design systems from scratch
+- Replicating existing website aesthetics (100% fidelity)
+- Creating comprehensive style guides
+- Ensuring design consistency across large projects
+- Rapid wireframe iteration
+- Extracting and systematizing design patterns
+- Need pixel-perfect replication (not generic AI UI)
 
-**Related:** Product Manager, Product & Growth Lead 0→1, UX Site Reviewer
+**Workflow Modes:**
+1. **Lo-Fi Wireframe:** Quick ASCII layouts for alignment and iteration
+2. **Hi-Fi from Reference:** Extract CSS from existing site → Generate style guide → Apply to new project
+3. **Custom Design System:** Build unique brand system from scratch with guided iteration
+
+**What Makes It Different:**
+- Achieves 100% fidelity (vs. typical 60-70% from screenshots)
+- Systematic co-creation process ensures quality before scaling
+- Generates reusable templates (style guides, animation specs, component manifests)
+- Works with companion `css-style-extractor` skill for high-fidelity input
+
+**Related:** Product Manager, Product & Growth Lead 0→1, UX Site Reviewer, CSS Style Extractor (skill)
 
 ---
 
@@ -476,16 +490,53 @@ A comprehensive reference of all skills and agents available in this repository.
 
 ---
 
-### Canvas Design
+### CSS Style Extractor
 
-**Location:** `skills/canvas-design/`
+**Location:** `skills/css-style-extractor/`
 
-**Purpose:** Creates visual designs and graphics.
+**Purpose:** Extract and parse CSS stylesheets into standardized, comprehensive style guide documentation. Transforms raw CSS from websites or design systems into structured markdown guides with color palettes, typography, spacing, shadows, and component styles.
+
+**What It Does:**
+- Extract CSS variables and hard-coded values from stylesheets
+- Categorize colors into primary, secondary, neutrals, semantic (success/error/warning)
+- Document typography systems (fonts, sizes, weights, line heights)
+- Identify spacing scales and patterns
+- Extract shadow/elevation systems and border radius scales
+- Parse component styles (buttons, inputs, cards, navigation)
+- Document animations and transitions
+- Generate standardized style guide markdown
 
 **When to Use:**
-- Generating visual assets
-- Creating graphics and illustrations
-- Designing marketing materials
+- Extracting design systems from reference website CSS
+- Converting raw stylesheets into design documentation
+- Creating style guides from existing codebases
+- Documenting design tokens from CSS variables
+- Preparing high-fidelity context for pixel-perfect-designer agent
+- Batch processing multiple CSS files for comparison
+- Analyzing competitor design patterns
+
+**Workflow:**
+1. Extract CSS from website (Inspect → Copy styles)
+2. Save to `data/inputs/css-extraction/[source]__[date].css`
+3. Run processing script: `python extract_css_styles.py [input_file]`
+4. Review generated style guide in `data/outputs/css-extraction/`
+5. Use with pixel-perfect-designer agent for high-fidelity replication
+
+**Output:**
+- Comprehensive markdown style guide with organized sections
+- All CSS variables documented
+- Color palette organized by category
+- Typography system (fonts, scale, weights, line heights)
+- Spacing, shadows, border radius scales
+- Component style examples with code snippets
+
+**Integration:**
+- **Companion to pixel-perfect-designer agent**
+- Provides high-fidelity CSS input (vs. 60-70% accuracy from screenshots)
+- Enables 100% fidelity design replication
+- Systematic extraction ensures no details are lost
+
+**Related:** Pixel-Perfect Designer (agent), Brand Guidelines
 
 ---
 
@@ -632,7 +683,7 @@ The following agents form a **complete product team** for different stages and s
 | **0→1 MVP** | Product & Growth Lead 0→1 | Fast, lo-fi, weekly shipping |
 | **Post-MVP** | Product Manager | Core PM: PRDs, roadmaps, prioritization |
 | **Post-MVP** | Technical Architect | System design, scalability, architecture |
-| **Post-MVP** | UX/UI Designer | Polished design, design systems, accessibility |
+| **Post-MVP** | Pixel-Perfect Designer | Design systems, pixel-perfect UI, Flow Engineering |
 | **Ongoing** | Product Operations | Experiments, analytics, launch execution |
 | **Ongoing** | Data Analytics Engineer | Full-stack BI, data → API → dashboard |
 
@@ -652,6 +703,9 @@ To add a new agent or skill:
 
 ## Version History
 
+- **2025-11-14:** Added Pixel-Perfect Designer agent (replaces UX/UI Designer and Canvas Design)
+- **2025-11-14:** Added CSS Style Extractor skill (companion to Pixel-Perfect Designer)
+- **2025-11-14:** Archived UX/UI Designer agent and Canvas Design skill
 - **2025-11-05:** Added Product Manager, Technical Architect, UX/UI Designer, Product Operations agents
 - **2025-11-05:** Added Data Analytics Engineer agent
 - **2025-10:** Initial catalog with Product & Growth Lead 0→1, React Stack Reviewer, Position Review Skill
