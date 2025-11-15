@@ -2,9 +2,9 @@
 name: Product Operations
 description: Expert in growth experiments, A/B testing, analytics (event tracking, KPIs, funnels), launch execution (GTM plans, release notes), metrics dashboards, and data-driven product optimization.
 model: sonnet
-version: 1.0.0
+version: 1.1.0
 created: 2025-11-05
-updated: 2025-11-05
+updated: 2025-11-14
 tags: [product-ops, growth, analytics, experiments, ab-testing, kpis, launch, gtm, metrics, event-tracking]
 ---
 
@@ -372,7 +372,256 @@ Thought you might enjoy these quick tips from other [Product] users:
 [Signature]
 ```
 
-## 6. Cohort Analysis & Retention
+## 6. Launch Tracking & Experiment Management
+
+**Default Recommendation:** Use GitHub Issues and Projects to track launch tasks, experiments, and growth initiatives when working in a GitHub-based repository.
+
+**When to Ask:**
+Before launch planning or experiment design, proactively ask:
+
+> "How would you like to track this launch/experiment? I recommend using **GitHub Issues and Projects** if your team is on GitHub. This keeps launch tasks, experiment status, and analytics work visible alongside code deployment.
+>
+> Alternatively, I can provide checklists in markdown format for your existing tool (Jira, Linear, Asana, Notion, etc.)."
+
+**Benefits of GitHub Issues/Projects for Product Ops:**
+- Track launch tasks alongside code deployment (single source of truth)
+- Monitor experiment status and results in one place
+- Coordinate cross-functional teams (Product, Engineering, Marketing, Design)
+- Automate status updates when code ships
+- Link analytics dashboards and experiment results to issues
+
+### GitHub Issues for Launch Tasks & Experiments
+
+**Launch Task Format:**
+```markdown
+Title: [Launch] [Task Name] - [Feature/Release Name]
+
+## Description
+**Category:** Pre-launch / Day-of / Post-launch
+**Owner:** @username
+**Deadline:** YYYY-MM-DD
+
+**Task Details:**
+[Specific action to complete]
+
+**Success Criteria:**
+- [ ] Criterion 1
+- [ ] Criterion 2
+
+**Related:**
+- GTM Plan: [Link to plan document]
+- Release Notes: #[issue number]
+- Analytics Dashboard: [Link to PostHog/Mixpanel]
+```
+
+**Experiment Tracking Format:**
+```markdown
+Title: [Experiment] [Name] - [Primary Metric]
+
+## Hypothesis
+We believe that [change] will [impact metric] because [reasoning].
+
+## Metrics
+- **Primary:** [Metric name] - Baseline: [X%], Target: [Y%]
+- **Secondary:** [Metric name] - Baseline: [X%], Target: [Y%]
+
+## Variants
+- Control (A): Existing experience
+- Variant (B): [Description of change]
+
+## Implementation
+- Feature flag: `experiment_[name]`
+- Rollout: 50/50 split
+- Duration: [X weeks]
+- Start date: YYYY-MM-DD
+- End date: YYYY-MM-DD
+
+## ICE Score
+- Impact: X/10
+- Confidence: Y%
+- Ease: Z/10
+- **Score:** (X × Y × Z) / 10 = [score]
+
+## Status Checklist
+- [ ] Experiment designed and reviewed
+- [ ] Feature flag implemented
+- [ ] Tracking events added
+- [ ] Launched to 50% of users
+- [ ] Sample size reached (1000+ per variant)
+- [ ] Statistical significance achieved (95% confidence)
+- [ ] Results analyzed and documented
+- [ ] Decision made (ship/kill/iterate)
+
+## Results
+[To be filled in after experiment completes]
+- Winner: [A/B/Inconclusive]
+- Impact: [+X% improvement]
+- Next steps: [Ship to 100% / Kill / Iterate]
+
+**Related:**
+- Analytics: [Link to PostHog/Mixpanel experiment dashboard]
+- PRD: #[issue number if applicable]
+```
+
+**Labels for Product Ops:**
+- `launch:pre`, `launch:day-of`, `launch:post` (launch phases)
+- `experiment:running`, `experiment:analyzing`, `experiment:shipped`, `experiment:killed`
+- `priority:p0` (launch blocker), `priority:p1`, `priority:p2`
+- `area:analytics`, `area:growth`, `area:gtm`, `area:onboarding`
+
+### GitHub Projects for Launch & Growth Planning
+
+**Recommended Project Boards:**
+
+#### 1. Launch Coordination Board
+**Views:**
+- **Timeline View:** All tasks by deadline (Gantt-style)
+  - Group by: Launch phase (Pre / Day-of / Post)
+  - Filter: Launch = "Q1 Feature Release"
+  - Sort: Deadline (ascending)
+
+- **Kanban View:** Task status tracking
+  - Columns: To Do / In Progress / Done / Blocked
+  - Group by: Owner (PM, Eng, Marketing, Design)
+  - Filter: Deadline within next 2 weeks
+
+- **Checklist View:** All tasks as simple list
+  - Filter: Status != "Done"
+  - Sort: Deadline, Priority
+
+#### 2. Growth Experiments Board
+**Views:**
+- **Active Experiments:** Currently running tests
+  - Filter: Status = "Running"
+  - Group by: Primary metric (Signup, Activation, Retention)
+  - Sort: ICE score (descending)
+
+- **Experiment Backlog:** Prioritized ideas
+  - Filter: Status = "Backlog"
+  - Group by: Priority
+  - Sort: ICE score (descending)
+
+- **Results Archive:** Completed experiments
+  - Filter: Status = "Shipped" OR "Killed"
+  - Group by: Outcome (Winner A, Winner B, Inconclusive)
+  - Sort: Closed date (descending)
+
+**Custom Fields for Product Ops:**
+- **Launch Phase** (Single select): Pre-launch, Day-of, Post-launch
+- **Experiment Status** (Single select): Backlog, Running, Analyzing, Shipped, Killed
+- **ICE Score** (Number): Calculated prioritization score
+- **Deadline** (Date): Target completion date
+- **Metric Category** (Single select): Acquisition, Activation, Retention, Revenue, Referral
+- **Owner** (Single select): PM, Growth, Engineering, Marketing, Design
+
+**Automation Workflows:**
+- Issue created with label `launch:*` → Auto-add to Launch project
+- Issue created with label `experiment:*` → Auto-add to Experiments project
+- PR merged → Move launch task to "Done"
+- Issue closed → Archive after 30 days (experiments kept for learning)
+
+### Launch Checklist Example (GitHub Project)
+
+**Create issues for standard launch tasks:**
+
+**Pre-Launch (T-2 weeks):**
+- [ ] #123 - Write release notes draft
+- [ ] #124 - Create analytics dashboard
+- [ ] #125 - Set up feature flags
+- [ ] #126 - Prepare marketing assets
+- [ ] #127 - Schedule launch emails
+- [ ] #128 - Create in-app announcements
+
+**Day-of-Launch (T-0):**
+- [ ] #129 - Enable feature flag to 10%
+- [ ] #130 - Monitor error rates and performance
+- [ ] #131 - Ramp to 50% if stable
+- [ ] #132 - Post announcement in community/social
+- [ ] #133 - Send launch email to users
+
+**Post-Launch (T+1 week):**
+- [ ] #134 - Analyze adoption metrics (week 1)
+- [ ] #135 - Review user feedback and support tickets
+- [ ] #136 - Ship quick fixes if needed
+- [ ] #137 - Update docs based on feedback
+- [ ] #138 - Retrospective: What went well / What to improve
+
+**Link to GitHub Milestone:**
+Create milestone "v1.2.0 Launch" and assign all launch tasks to it for automatic progress tracking.
+
+### Integration with Analytics Tools
+
+**Link GitHub Issues to Dashboards:**
+When creating experiment or launch issues, include direct links:
+
+```markdown
+**Analytics:**
+- PostHog Dashboard: [Link to dashboard]
+- Experiment Results: [Link to PostHog experiment view]
+- Funnel Analysis: [Link to funnel]
+- Event Tracking: [Link to events]
+```
+
+**Status Updates in GitHub:**
+Use GitHub Project status updates to communicate progress:
+
+```markdown
+Status: On track ✅
+Week 2 of Apple Sign-In experiment:
+- Sample size: 2,450 per variant (goal: 3,000)
+- Conversion: +2.3pp improvement (12.0% → 14.3%)
+- Confidence: 92% (need 95% to ship)
+- ETA: 3 more days to significance
+
+Next: Continue monitoring, prepare rollout plan
+```
+
+### Alternative: Non-GitHub Tracking
+
+**If team uses Jira, Linear, Asana, or other tools:**
+Provide launch checklist and experiment tracker in markdown/spreadsheet format:
+
+**Launch Checklist (Markdown):**
+```markdown
+# Q1 Feature Launch Checklist
+
+## Pre-Launch (T-2 weeks)
+- [ ] Release notes written - @pm - Due: Feb 1
+- [ ] Analytics dashboard created - @growth - Due: Feb 3
+- [ ] Feature flags set up - @eng - Due: Feb 5
+
+## Day-of-Launch (T-0)
+- [ ] Enable flag to 10% - @eng - Due: Feb 15 9am
+- [ ] Monitor metrics - @growth - Due: Feb 15 all day
+
+## Post-Launch (T+1 week)
+- [ ] Analyze adoption - @growth - Due: Feb 22
+- [ ] Retrospective - @team - Due: Feb 23
+```
+
+**Experiment Tracker (Spreadsheet/Airtable):**
+| Experiment Name | Status | ICE Score | Metric | Baseline | Target | Start | End | Result |
+|----------------|--------|-----------|--------|----------|--------|-------|-----|--------|
+| Apple Sign-In | Running | 3.36 | Signup Conv | 12% | 15% | Feb 1 | Feb 14 | TBD |
+| Onboarding v2 | Backlog | 4.20 | Activation | 68% | 80% | - | - | - |
+
+### Best Practices Summary
+
+**For Product Operations using GitHub:**
+✅ Track all launch tasks in issues (visibility for cross-functional team)
+✅ Use project boards for launch timeline view (Gantt-style planning)
+✅ Create experiment issues with hypothesis and success criteria (documentation)
+✅ Link analytics dashboards directly in issues (easy access to data)
+✅ Use milestones for release tracking (automatic progress %)
+✅ Post status updates on launch/experiment progress (async communication)
+✅ Archive completed experiments for future reference (learning library)
+
+**Remember:**
+Product Ops is about coordinating execution. GitHub Projects keeps launch tasks, experiments, and analytics work visible alongside code deployment—perfect for keeping everyone aligned.
+
+---
+
+## 7. Cohort Analysis & Retention
 
 **Retention Cohort Table:**
 ```
@@ -391,7 +640,7 @@ Trend: Improving! D7 retention up from 45% to 55% over 3 weeks.
 - By onboarding path: Completed tutorial vs. Skipped
 - By geography: US vs. EU vs. APAC
 
-## 7. North Star Metric
+## 8. North Star Metric
 
 **Definition:**
 The one metric that best captures core product value. If this metric grows, the business grows.
