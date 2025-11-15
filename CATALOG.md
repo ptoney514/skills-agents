@@ -59,6 +59,7 @@ A comprehensive reference of all skills and agents available in this repository.
 - Product strategy & vision (North Star Metric)
 - Competitive analysis and market research
 - Product metrics & analytics
+- **GitHub Issues & Projects integration** (work tracking, user stories, roadmaps, sprints)
 
 **When to Use:**
 - Writing comprehensive PRDs for complex features
@@ -68,7 +69,29 @@ A comprehensive reference of all skills and agents available in this repository.
 - Managing stakeholder alignment
 - Defining product strategy and vision
 
-**Related:** Product Operations, Technical Architect, UX/UI Designer
+**GitHub Projects Support:**
+Agent proactively recommends GitHub Issues and Projects for tracking work. Provides:
+- Issue templates for user stories (acceptance criteria, labels, priorities)
+- Project board configurations (Backlog, Sprint, Roadmap, Release views)
+- Milestone tracking for releases
+- Custom fields (Priority, RICE score, Effort, Quarter)
+- Alternative markdown format for Jira/Linear/Asana teams
+
+**How to Use:**
+```
+Launch the Product Manager agent from:
+agents/product-manager/AGENT.md
+
+Help me create a PRD and roadmap for [feature name]
+```
+
+The agent will ask:
+> "How would you like to track this work? I recommend using GitHub Issues and Projects if your team is already on GitHub..."
+
+**Choose GitHub:** Get issue templates, project setup, automation workflows
+**Choose another tool:** Get markdown format for Jira/Linear/Asana
+
+**Related:** Product Operations, Technical Architect, Pixel-Perfect Designer
 
 ---
 
@@ -158,6 +181,7 @@ A comprehensive reference of all skills and agents available in this repository.
 - Launch execution & GTM planning (go-to-market plans, release notes, onboarding emails)
 - Cohort analysis & retention (retention cohorts, segmentation)
 - North Star Metric definition
+- **GitHub Issues & Projects integration** (launch tracking, experiment management, analytics coordination)
 
 **When to Use:**
 - Designing A/B tests to improve metrics
@@ -167,6 +191,29 @@ A comprehensive reference of all skills and agents available in this repository.
 - Planning feature launches (GTM plan, channels, messaging)
 - Writing release notes and onboarding emails
 - Analyzing experiment results
+
+**GitHub Projects Support:**
+Agent proactively recommends GitHub Issues and Projects for tracking launches and experiments. Provides:
+- Launch task issues (Pre-launch, Day-of, Post-launch phases)
+- Experiment tracking issues (hypothesis, ICE score, results)
+- Launch Coordination Board (Timeline, Kanban, Checklist views)
+- Growth Experiments Board (Active, Backlog, Results Archive)
+- Integration with analytics dashboards (PostHog, Mixpanel links)
+- Alternative markdown checklists for Jira/Linear/Asana teams
+
+**How to Use:**
+```
+Launch the Product Operations agent from:
+agents/product-operations/AGENT.md
+
+Help me plan the launch for [feature name] and set up experiment tracking
+```
+
+The agent will ask:
+> "How would you like to track this launch/experiment? I recommend using GitHub Issues and Projects if your team is on GitHub..."
+
+**Choose GitHub:** Get launch checklists, experiment issues, project boards, analytics integration
+**Choose another tool:** Get markdown checklists and experiment tracker format
 
 **Related:** Product Manager, Product & Growth Lead 0→1, Data Analytics Engineer
 
@@ -186,6 +233,7 @@ A comprehensive reference of all skills and agents available in this repository.
 - Visual artifacts (lo-fi wireframes, user flows, sitemaps, Mermaid diagrams)
 - Launch/GTM assets and release notes
 - One metric that matters (focus and clarity)
+- **GitHub Issues & Projects integration** (weekly ship plans, MVP tracking, velocity monitoring)
 
 **When to Use:**
 - Weeks 1-12 (0→1 MVP stage)
@@ -195,10 +243,33 @@ A comprehensive reference of all skills and agents available in this repository.
 
 **When NOT to Use:**
 - Deep technical architecture (use Technical Architect)
-- Polished visual design (use UX/UI Designer)
+- Polished visual design (use Pixel-Perfect Designer)
 - Mature products or large teams
 
-**Related:** Product Manager, Product Operations, Technical Architect, UX/UI Designer
+**GitHub Projects Support:**
+Agent proactively recommends GitHub Issues and Projects for weekly ship plans. Provides:
+- Weekly task issues (5-7 tasks/week format)
+- Simple project board ("This Week" Kanban + Velocity Tracker)
+- Milestone tracking for MVP launch
+- Weekly rituals integration (Mon planning, Fri retro)
+- Emphasis on minimal overhead (ship > process)
+- Alternative markdown ship plans for lightweight tracking
+
+**How to Use:**
+```
+Launch the Product & Growth Lead 0→1 agent from:
+agents/product-growth-lead-0to1/AGENT.md
+
+Help me plan Week [N] ship plan for [MVP feature]
+```
+
+The agent will ask:
+> "How would you like to track this week's ship plan? I recommend using GitHub Issues and Projects for fast-moving 0→1 work..."
+
+**Choose GitHub:** Get 5-7 weekly task issues, "This Week" board, velocity tracking
+**Choose markdown:** Get lightweight ship plan checklist for Notion/Google Docs
+
+**Related:** Product Manager, Product Operations, Technical Architect, Pixel-Perfect Designer
 
 ---
 
@@ -703,6 +774,8 @@ To add a new agent or skill:
 
 ## Version History
 
+- **2025-11-14:** Added GitHub Issues & Projects integration to Product Manager, Product Operations, and Product & Growth Lead 0→1 agents
+- **2025-11-14:** Added "How to Use" invocation examples to all product management agents
 - **2025-11-14:** Added Pixel-Perfect Designer agent (replaces UX/UI Designer and Canvas Design)
 - **2025-11-14:** Added CSS Style Extractor skill (companion to Pixel-Perfect Designer)
 - **2025-11-14:** Archived UX/UI Designer agent and Canvas Design skill
