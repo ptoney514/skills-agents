@@ -39,6 +39,7 @@ A comprehensive reference of all skills and agents available in this repository.
 | **Create quick-reference job aids** | [Job Aid Writer](#job-aid-writer) |
 | **Optimize AI prompts for HR** | [Lyra Prompt Optimizer](#lyra-prompt-optimizer) |
 | **Track recruiting pipelines** | [Recruiting Tracker](#recruiting-tracker) |
+| **Manage HR sprint tracking** | [HR Project Manager](#hr-project-manager) |
 
 ---
 
@@ -450,6 +451,44 @@ The agent will ask:
 
 ---
 
+### HR Project Manager
+
+**Location:** `skills/hr-project-manager/`
+
+**Purpose:** Automate HR Operations sprint tracking through Excel spreadsheet manipulation and Linear issue synchronization. Maintains Excel as single source of truth while providing enhanced project management through Linear integration.
+
+**What It Does:**
+- Excel tracker manipulation (read, update, save dated copies)
+- Linear issue creation and sync (Excel → Linear)
+- Sprint report generation (summaries, emails, metrics)
+- Data validation (integrity checks, dependency parsing)
+- Task breakdown suggestions (weekly chunks for large projects)
+
+**When to Use:**
+- Managing weekly HR Operations sprints
+- Tracking projects in Excel with Linear integration
+- Generating sprint confirmation emails
+- Breaking down large tasks into weekly deliverables
+- Validating tracker data integrity
+- Automating sprint workflow (meeting updates, Linear sync, reporting)
+
+**Key Features:**
+- **Excel as Source of Truth:** All updates happen in Excel first
+- **Weekly Sprint Cadence:** Thursday meetings with 7-day lookahead
+- **Linear Integration:** Optional sync for enhanced visibility
+- **Sprint Reports:** Automated summaries with completion rates
+- **Blocker Detection:** Identifies dependencies and blocked items
+
+**Workflow:**
+1. **Wednesday:** Review sprint items for tomorrow's meeting
+2. **Thursday (Meeting):** Update status, % done, notes in Excel
+3. **Thursday (Post-Meeting):** Sync to Linear, generate sprint email
+4. **Friday:** Progress check on in-progress items
+
+**Related:** Recruiting Tracker (similar tracking pattern), Excel Design Guru, Product Operations (sprint management)
+
+---
+
 ## Writing & Documentation Skills
 
 ### How-to Guide Writer
@@ -774,6 +813,7 @@ To add a new agent or skill:
 
 ## Version History
 
+- **2025-11-18:** Added HR Project Manager skill (Excel tracker manipulation, Linear sync, sprint management)
 - **2025-11-14:** Added GitHub Issues & Projects integration to Product Manager, Product Operations, and Product & Growth Lead 0→1 agents
 - **2025-11-14:** Added "How to Use" invocation examples to all product management agents
 - **2025-11-14:** Added Pixel-Perfect Designer agent (replaces UX/UI Designer and Canvas Design)
