@@ -29,6 +29,7 @@ A comprehensive reference of all skills and agents available in this repository.
 | **Write a comprehensive PRD** | [Product Manager](#product-manager-core) |
 | **Design system architecture** | [Technical Architect](#technical-architect) |
 | **Create pixel-perfect design systems** | [Pixel-Perfect Designer](#pixel-perfect-designer) |
+| **Build React component libraries** | [Design Systems Engineer](#design-systems-engineer) |
 | **Extract CSS into style guides** | [CSS Style Extractor](#css-style-extractor) |
 | **Run A/B tests and analytics** | [Product Operations](#product-operations) |
 | **Fast MVP planning (0→1)** | [Product & Growth Lead 0→1](#product--growth-lead-01) |
@@ -370,6 +371,77 @@ The agent will ask:
 ---
 
 ## Design & UX Agents
+
+### Design Systems Engineer
+
+**Location:** `agents/design-systems-engineer/`
+
+**Purpose:** Expert Design Systems Engineer who bridges design and development by building scalable, maintainable design systems using React + TypeScript + shadcn/ui + Tailwind CSS.
+
+**Key Capabilities:**
+- Design-to-code translation (brand guidelines → production components)
+- Component library development (shadcn/ui foundation + custom composites)
+- Design token system setup (Tailwind config: colors, typography, spacing, shadows)
+- Accessibility compliance (WCAG AA standards built-in)
+- Component documentation (Storybook, usage guidelines, API reference)
+- 5-phase workflow (Discovery → Foundation → Components → Testing/Docs → Maintenance)
+
+**When to Use:**
+- Building production-ready component libraries from scratch
+- Translating Figma designs into working React components
+- Setting up design token systems in Tailwind
+- Creating branded design systems for client projects
+- Establishing reusable UI patterns for personal projects
+- Implementing pixel-perfect components matching design specs
+- Auditing design-code consistency
+
+**Technical Stack:**
+- React + TypeScript (full type safety)
+- shadcn/ui (accessible component primitives)
+- Tailwind CSS (utility-first styling)
+- Radix UI (accessible primitives)
+- Storybook (component documentation)
+- class-variance-authority (type-safe variants)
+
+**5-Phase Implementation:**
+1. **Discovery & Planning** - Brand requirements, component priorities, technical architecture
+2. **Design System Foundation** - Design tokens (colors, typography, spacing, shadows, border radius)
+3. **Component Development** - Tier 1 (foundation) → Tier 2 (composite) → Tier 3 (complex)
+4. **Testing & Documentation** - Accessibility tests, Storybook stories, usage guidelines
+5. **Maintenance & Governance** - Design-code sync, contribution guidelines
+
+**Deliverables:**
+- Working `tailwind.config.js` with complete token system
+- Implemented components in `src/components/ui/`
+- TypeScript types and CVA variants
+- Component showcase/gallery page
+- Design system documentation (README, usage guides, API reference)
+- Handoff materials for client projects
+
+**How It Differs from UI/UX Designer:**
+- **UI/UX Designer** = Design thinking, specs, wireframes, user flows (the blueprint)
+- **Design Systems Engineer** = Working code, React components, Tailwind configs (the implementation)
+
+**Related:** UI/UX Designer (takes specs from), Pixel-Perfect Designer (implements designs from), React Stack Reviewer (code quality)
+
+---
+
+### UI/UX Designer
+
+**Location:** `agents/ui-ux-designer/`
+
+**Purpose:** Expert UI/UX designer providing design strategy, user experience optimization, design system creation, component architecture, accessibility compliance, and visual design decisions.
+
+**When to Use:**
+- Creating interface designs and wireframes
+- Conducting UX audits and accessibility reviews
+- Designing user flows and journey maps
+- Providing design critique and recommendations
+- Defining design system architecture (before implementation)
+
+**Related:** Design Systems Engineer (implements your designs)
+
+---
 
 ### UX Site Reviewer
 
@@ -813,6 +885,7 @@ To add a new agent or skill:
 
 ## Version History
 
+- **2025-11-20:** Added Design Systems Engineer agent (React + TypeScript + shadcn/ui + Tailwind CSS implementation)
 - **2025-11-18:** Added HR Project Manager skill (Excel tracker manipulation, Linear sync, sprint management)
 - **2025-11-14:** Added GitHub Issues & Projects integration to Product Manager, Product Operations, and Product & Growth Lead 0→1 agents
 - **2025-11-14:** Added "How to Use" invocation examples to all product management agents
