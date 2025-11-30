@@ -42,6 +42,7 @@ A comprehensive reference of all skills and agents available in this repository.
 | **Optimize AI prompts for HR** | [Lyra Prompt Optimizer](#lyra-prompt-optimizer) |
 | **Track recruiting pipelines** | [Recruiting Tracker](#recruiting-tracker) |
 | **Manage HR sprint tracking** | [HR Project Manager](#hr-project-manager) |
+| **Track GitHub Issues + project status** | [Project Manager](#project-manager) |
 
 ---
 
@@ -273,6 +274,61 @@ The agent will ask:
 **Choose markdown:** Get lightweight ship plan checklist for Notion/Google Docs
 
 **Related:** Product Manager, Product Operations, Technical Architect, Pixel-Perfect Designer
+
+---
+
+### Project Manager
+
+**Location:** `agents/project-manager/`
+
+**Purpose:** Lightweight project management assistant that helps you stay organized, maintain visibility, and ship consistently. Uses GitHub Issues as the primary tracker with project_status.md for high-level visibility.
+
+**Philosophy:** Simple beats complex. Ship beats perfect. Visible beats hidden.
+
+**Key Capabilities:**
+- **GitHub Issues** as primary work tracker (create, label, close, organize)
+- **project_status.md** for high-level visibility and sprint summaries
+- **Weekly rituals** (Monday planning, daily check-ins, Friday retros)
+- **Backlog management** (capture, groom, prioritize)
+- **Focus techniques** (ruthless prioritization, blocker resolution, scope control)
+- **Issue templates** (feature, bug, chore formats)
+
+**When to Use:**
+- Starting a new project and need a simple tracking system
+- Weekly planning sessions (Monday kickoff)
+- Daily check-ins to review progress
+- Friday retrospectives and velocity tracking
+- Backlog grooming and prioritization
+- When overwhelmed and need to focus on what matters
+- Want visibility without complex tooling
+
+**Weekly Rituals:**
+- **Monday (15-20 min):** Review velocity, close shipped issues, pick 5-7 issues for the week, update project_status.md
+- **Daily (5 min):** What shipped yesterday? What's in progress today? Any blockers?
+- **Friday (10 min):** Count shipped, update velocity, reflect, plan rollover
+
+**How to Use:**
+```
+Launch the Project Manager agent from:
+agents/project-manager/AGENT.md
+
+Help me set up tracking for my new project [name]
+```
+
+```
+Monday planning: Review last week and plan this week's 5-7 issues
+```
+
+```
+Friday retro: What did we ship? Update velocity in project_status.md
+```
+
+**Tools:**
+- GitHub CLI (`gh issue create`, `gh issue list`, `gh issue close`)
+- GitHub Projects (optional, for Kanban board view)
+- project_status.md (markdown file in repo root)
+
+**Related:** Shipping Coach (task sizing), Product Manager (PRDs → issues), Product Operations (launch tracking)
 
 ---
 
@@ -908,6 +964,7 @@ The following agents form a **complete product team** for different stages and s
 | **Post-MVP** | Pixel-Perfect Designer | Design systems, pixel-perfect UI, Flow Engineering |
 | **Ongoing** | Product Operations | Experiments, analytics, launch execution |
 | **Ongoing** | Data Analytics Engineer | Full-stack BI, data → API → dashboard |
+| **Any Stage** | Project Manager | GitHub Issues + project_status.md tracking |
 
 ---
 
@@ -925,6 +982,7 @@ To add a new agent or skill:
 
 ## Version History
 
+- **2025-11-30:** Added Project Manager agent (GitHub Issues + project_status.md, weekly rituals, backlog management)
 - **2025-11-30:** Added Webflow Developer agent (MCP-powered Webflow site building with design systems)
 - **2025-11-20:** Added Design Systems Engineer agent (React + TypeScript + shadcn/ui + Tailwind CSS implementation)
 - **2025-11-18:** Added HR Project Manager skill (Excel tracker manipulation, Linear sync, sprint management)
