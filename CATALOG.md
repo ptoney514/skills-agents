@@ -2,7 +2,7 @@
 
 A comprehensive reference of all skills and agents available in this repository.
 
-**Last Updated:** 2025-11-14
+**Last Updated:** 2025-11-30
 
 ---
 
@@ -36,6 +36,7 @@ A comprehensive reference of all skills and agents available in this repository.
 | **Full-stack BI solution** | [Data Analytics Engineer](#data-analytics-engineer) |
 | **Review React code** | [React Stack Reviewer](#react-stack-reviewer) |
 | **Audit UX design** | [UX Site Reviewer](#ux-site-reviewer) |
+| **Build Webflow sites** | [Webflow Developer](#webflow-developer) |
 | **Write how-to guides** | [How-to Guide Writer](#how-to-guide-writer) |
 | **Create quick-reference job aids** | [Job Aid Writer](#job-aid-writer) |
 | **Optimize AI prompts for HR** | [Lyra Prompt Optimizer](#lyra-prompt-optimizer) |
@@ -367,6 +368,45 @@ The agent will ask:
 - Creating pull request descriptions
 - Generating PR summaries for reviewers
 - Ensuring PR best practices
+
+---
+
+### Webflow Developer
+
+**Location:** `agents/webflow-developer/`
+
+**Purpose:** Expert Webflow developer who creates distinctive, production-grade websites. Combines design thinking with technical Webflow implementation to deliver memorable, high-quality web experiences.
+
+**MCP Requirement:** Requires a Webflow MCP server with tools: `webflow_guide_tool`, `sites_list`, `variable_tool`, `style_tool`, `de_page_tool`, `element_builder`, `element_tool`, `collections_create`, `de_component_tool`, `sites_publish`
+
+**Key Capabilities:**
+- Webflow site building (pages, sections, components, styles, variables)
+- Design system implementation (color variables, typography, spacing)
+- CSS longhand expertise (Webflow-specific requirements)
+- Responsive design across all breakpoints
+- CMS collection and item management
+- Component creation and reuse
+- Bold, distinctive design direction (anti-generic patterns)
+
+**When to Use:**
+- Building new Webflow sites or landing pages
+- Creating/modifying Webflow pages, sections, or components
+- Setting up design systems with variables in Webflow
+- Implementing responsive layouts with proper breakpoint hierarchy
+- Managing Webflow CMS collections
+- Need guidance on Webflow best practices and CSS implementation
+
+**Mandatory Workflow:**
+1. `webflow_guide_tool` → Get best practices
+2. `sites_list` → Retrieve site_id
+3. Design planning → Define aesthetic direction
+4. `variable_tool` → Create color/spacing variables
+5. `style_tool` → Create styles referencing variables
+6. `de_page_tool` → Create or select page
+7. `element_builder` → Build elements (max 3 levels deep)
+8. `element_tool` → Apply styles, set content
+
+**Related:** Pixel-Perfect Designer, Design Systems Engineer, CSS Style Extractor
 
 ---
 
@@ -885,6 +925,7 @@ To add a new agent or skill:
 
 ## Version History
 
+- **2025-11-30:** Added Webflow Developer agent (MCP-powered Webflow site building with design systems)
 - **2025-11-20:** Added Design Systems Engineer agent (React + TypeScript + shadcn/ui + Tailwind CSS implementation)
 - **2025-11-18:** Added HR Project Manager skill (Excel tracker manipulation, Linear sync, sprint management)
 - **2025-11-14:** Added GitHub Issues & Projects integration to Product Manager, Product Operations, and Product & Growth Lead 0→1 agents
